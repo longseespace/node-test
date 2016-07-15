@@ -1,4 +1,4 @@
-# Getting Started
+# Node Test
 
 ## Installing dependencies
 - `npm install`
