@@ -1,0 +1,7 @@
+.gallery--full{
+  &.is-active{
+    top: 0%;
+    opacity: 1;
+    visibility: visible;
+  }
+}

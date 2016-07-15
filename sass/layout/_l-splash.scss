@@ -1,0 +1,1116 @@
+// Layout: Splash
+.l-splash{
+  position: relative;
+  @extend .container;
+
+  // Block: Header
+  &__header{
+    padding-bottom: 20px;
+    clear: both;
+    float: left;
+    width: 100%;
+  }
+
+  // Block: Subheader
+  // Parent: Header
+  &__subheader{
+    @extend .hidden-md-up, .col-xs-12;
+  }
+
+  &__price{
+    color: $blue;
+    font-size: 1.8rem;
+    margin-top: 5px;
+    text-align: center;
+    @extend .hidden-md-up, .col-xs-12;
+  }
+
+  &__breadcrumb{
+    @extend .hidden-sm-down, .col-md-4, .col-lg-7;
+  }
+
+  &__navigation{
+    text-align: right;
+    position: relative;
+    right: 5px;
+    @extend .hidden-sm-down, .hidden-lg-up, .col-md-2;
+
+    .nav__link{
+      color: $grey;
+
+      &--prev{
+        .nav__icon{
+          @extend .ion-ios-arrow-left;
+        }
+      }
+      &--next{
+        padding-left: 0;
+        padding-right: 20px;
+        .nav__icon{
+          right: 5px;
+          left: inherit;
+          @extend .ion-ios-arrow-right;
+        }
+      }
+    }
+  }
+
+  // Block: Actions
+  // Parent Header
+  &__actions{
+    padding-left: 20px;
+    @extend .col-xs-12, .col-md-6, .col-lg-5;
+
+    .nav__link{
+      color: $grey;
+
+      &--prev{
+        .nav__icon{
+          @extend .ion-ios-arrow-left;
+        }
+      }
+      &--next{
+        padding-left: 0;
+        padding-right: 20px;
+        .nav__icon{
+          right: 0;
+          @extend .ion-ios-arrow-right;
+        }
+      }
+      &--save{
+        .nav__icon{
+          @extend .ion-android-bookmark;
+        }
+      }
+      &--decline{
+        .nav__icon{
+          @extend .ion-android-close;
+        }
+      }
+      &--report{
+        .nav__icon{
+          @extend .ion-ios-flag;
+        }
+      }
+      &--event{
+        padding-left: 20px;
+        .nav__icon{
+          @extend .ion-person-stalker;
+        }
+      }
+      &--upfront{
+        padding-left: 20px;
+        .nav__icon{
+          font-size: 1.6rem;
+          @extend .cz-icon, .cz-icon-plus-circle;
+          &:before{
+            vertical-align: middle;
+          }
+        }
+      }
+    }
+
+    .nav__icon{
+      color: $light-grey;
+    }
+  }
+
+  // Block: Close
+  // Parent: Header
+  &__close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 30;
+  }
+
+  // Block: Body
+  &__body{
+    background: $white;
+    box-shadow: 0 4px 16px #bfc6cd;
+    border-radius: 0 4px 4px 0;
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+  }
+
+  &__arrow{
+    position: absolute;
+    background: transparent;
+    color: $light-grey;
+    border: 0;
+    font-size: 4.5rem;
+    &--prev{
+      @extend .ion-ios-arrow-left;
+    }
+    &--next{
+      @extend .ion-ios-arrow-right;
+    }
+  }
+
+  // Block: Gallery
+  &__gallery{
+    padding: 0;
+    @extend .col-xs-12, .col-md-6, .col-lg-7;
+  }
+
+  // Block: Content
+  &__content{
+    @extend .col-xs-12, .col-md-6, .col-lg-5;
+  }
+
+  // Block: Tabs
+  &__tabs{
+    @extend .hidden-sm-down;
+    .nav{
+      &__link{
+        font-size: 1.3rem;
+        margin: 0 0.5em;
+        padding-top: 30px;
+        padding-bottom: 10px;
+        &:first-child{
+          margin-left: 0;
+        }
+        &:last-child{
+          margin-right: 0;
+        }
+      }
+      &__wrapper{
+        padding-left: 20px;
+        white-space: nowrap;
+      }
+    }
+  }
+
+  // Block: Smartphone Tabs
+  &__smartphone-tabs{
+    @extend .hidden-md-up;
+  }
+
+  // Module: Details
+  .details{
+    margin-top: 30px;
+
+    // Block: Title
+    &__title{
+      font-size: 2.2rem;
+      @extend .col-xs-12, .hidden-sm-down;
+    }
+
+    // Block: Price
+    &__price{
+      color: $blue;
+      font-size: 1.6rem;
+      padding-top: 5px;
+      @extend .col-xs-12, .hidden-sm-down;
+    }
+
+    // Block: Duration
+    &__duration{
+      margin-top: 30px;
+      color: #63686b;
+      font-weight: 600;
+      @extend .col-xs-12;
+    }
+
+    // Block: Form
+    &__form{
+      clear: both;
+      padding-top: 40px;
+      padding-bottom: 10px;
+    }
+
+    // Block: Left & Right
+    &__left, &__right{
+      position: relative;
+    }
+
+    // Block: Eye
+    &__eye{
+      position: absolute;
+      left: 100%;
+      top: 50%;
+      transform: translate(0, -50%);
+      font-size: 3rem;
+      padding: 0;
+      line-height: 100%;
+      background: transparent;
+      color: $light-grey;
+      border: 0;
+      @extend .ion-ios-eye;
+    }
+
+    .form{
+      &__group{
+        margin-bottom: 20px;
+      }
+    }
+
+    // Block: List
+    &__list{
+      @extend .col-xs-12;
+
+      .list{
+        &__item{
+          padding-top: 10px;
+          padding-bottom: 10px;
+        }
+        &__icon{
+          color: $light-grey;
+          &--location{
+            left: -2px;
+            @extend .cz-icon, .cz-icon-marker;
+          }
+          &--time{
+            @extend .ion-android-time;
+          }
+          &--card{
+            @extend .ion-card;
+          }
+        }
+      }
+    }
+  }
+
+  // Module: Description
+  .description{
+    .scroll{
+      margin-left: -10px;
+      margin-right: -10px;
+      &__container{
+        padding: 0 20px;
+        max-height: 440px;
+      }
+    }
+
+    // Block: Title
+    &__title{
+      font-size: 2.2rem;
+      margin-top: 30px;
+      @extend .hidden-sm-down;
+    }
+
+    // Block: Price
+    &__subtitle{
+      color: $blue;
+      font-size: 1.6rem;
+      padding-top: 5px;
+      margin-bottom: 20px;
+      display: block;
+      @extend .hidden-sm-down;
+    }
+  }
+
+  // Module: Comments
+  .comments{
+    padding-top: 20px;
+
+    // Block: Form
+    &__form{
+      float: left;
+      width: 100%;
+
+      .form{
+        &__left{
+          @extend .col-xs-9, .col-md-10;
+        }
+        &__right{
+          text-align: right;
+          padding-left: 5px;
+          @extend .col-xs-3, .col-md-2;
+        }
+        &__post{
+          width: 100%;
+          padding-left: 0;
+          padding-right: 0;
+        }
+      }
+    }
+
+    // Block: Nav
+    &__nav{
+      text-align: right;
+      margin: 15px 0;
+      @extend .col-xs-12;
+      .nav{
+        &__link{
+          color: $light-grey;
+          &.is-active{
+            color: $grey;
+          }
+        }
+      }
+    }
+
+    .scroll{
+      margin-left: -10px;
+      margin-right: -10px;
+
+      &__container{
+        max-height: 350px;
+      }
+    }
+  }
+
+  // Module: Seller
+  .seller{
+    padding-top: 30px;
+
+    // Block: Avatar
+    &__avatar{
+      float: left;
+      width: 60px;
+      margin-right: 15px;
+      margin-bottom: 15px;
+    }
+    // Block: User Image
+    // Parent: Avatar
+    &__user-image{
+      width: 100%;
+      height: auto;
+      border: 1px solid #ccc;
+    }
+
+    // Block: Username
+    &__username{
+      font-weight: 600;
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+      margin-top: 7.5px;
+    }
+
+    // Block: Left
+    &__left{
+      clear: left;
+      @extend .col-xs-12, .col-md-6;
+    }
+
+    // Block: Right
+    &__right{
+      clear: right;
+      text-align: right;
+      .button{
+        margin-top: 7px;
+      }
+      @extend .col-xs-12, .col-md-6;
+    }
+
+    // Block: List
+    &__list{
+      margin-bottom: 15px;
+      .list{
+        &__item{
+          padding-top: 10px;
+          padding-bottom: 10px;
+        }
+        &__icon{
+          color: $light-grey;
+          &--website{
+            @extend .ion-android-globe;
+          }
+          &--phone{
+            @extend .ion-ios-telephone-outline;
+          }
+          &--place{
+            left: -2px;
+            @extend .cz-icon, .cz-icon-marker;
+          }
+        }
+      }
+    }
+
+    // Block: Map
+    &__map{
+      clear: left;
+      margin-left: 10px;
+      margin-right: 10px;
+      .sebm-google-map-container{
+        height: 200px;
+        width: 100%;
+        float: left;
+      }
+    }
+  }
+
+  // Block: Footer
+  &__footer{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+  }
+  // Block: Total
+  // Parent: Footer
+  &__total{
+    position: relative;
+    width: 25%;
+    &:before{
+      content: "Total";
+      position: absolute;
+      top: -15px;
+      left: 0;
+      font-size: 1.2rem;
+      color: $light-grey;
+    }
+  }
+  // Block: Amount
+  // Parent: Total
+  &__amount{
+    color: $blue;
+    font-weight: 600;
+    font-size: 2.1rem;
+  }
+  // Block: Action
+  // Parent: Footer
+  &__action{
+    width: 75%;
+    text-align: right;
+    .button{
+      margin-left: 10px;
+      &__icon{
+        font-size: 1.8rem;
+      }
+      &:first-child{
+        margin: 0;
+      }
+      &--borderless{
+        padding: 5px 0 5px 25px;
+        border-bottom-width: 2px;
+        .button__icon{
+          left: 0;
+        }
+      }
+      &--checkout{
+        .button__icon{
+          @extend .cz-icon, .cz-icon-cart-checkout;
+        }
+      }
+      &--cart{
+        .button__icon{
+          @extend .cz-icon, .cz-icon-cart-add;
+        }
+      }
+    }
+  }
+
+  // Block: Related
+  &__related{
+    .l-splash__arrow{
+      &--prev{
+        left: -32px !important;
+      }
+      &--next{
+        right: -32px !important;
+      }
+    }
+  }
+  // Block: Related Title
+  // Parent: Related
+  &__related-title{
+    position: relative;
+    font-size: 2rem;
+    padding-bottom: 1.5em;
+    padding-top: 1.5em;
+    margin: 0;
+    &:after, &:before{
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 145px;
+      right: 0;
+      height: 1px;
+      background: #d0dce7;
+    }
+    &:before{
+      content: none;
+    }
+  }
+
+  // Block: Listing
+  // Parent: Related
+  &__listing{
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0 -20px;
+    position: relative;
+    .l-splash{
+      &__arrow{
+        @extend .hidden-md-down;
+      }
+      &__related-swiper{
+        margin: -10px 10px 0;
+        padding: 10px 10px;
+        width: 100%;
+        @extend .hidden-md-down;
+      }
+      &__related-paginated{
+        width: 100%;
+        position: relative;
+        padding-bottom: 48px;
+        .card{
+          padding: 0 20px;
+          &__date{
+            left: 12px;
+          }
+          @extend .col-xs-12, .col-md-4, .col-lg-4;
+        }
+        @extend .hidden-lg-up;
+      }
+    }
+  }
+
+  &__loadmore{
+    width: 100%;
+    padding: 8px;
+    background: transparent;
+    border: 0;
+    font-size: 1.6rem;
+    border: 1px solid $light-grey;
+    &--wrapper{
+      position: absolute;
+      left: 20px;
+      bottom: 0;
+      right: 20px;
+      padding: 10px;
+    }
+  }
+
+  // Layout: Splash
+  // Size: Desktop
+  @media screen and (min-width: $grid-lg) {
+    padding: 0 20px;
+
+    .l-splash{
+      // Block: Close
+      &__close{
+        right: -25px;
+        top: -10px;
+        transition: 0.15s ease-out;
+        &:hover{
+          color: $grey;
+        }
+      }
+
+      &__actions{
+        .nav{
+          &__link{
+            &:hover, &:hover .nav__icon{
+              color: $blue;
+            }
+          }
+        }
+      }
+
+      &__arrow{
+        top: 50%;
+        transform: translate(0, -50%);
+        transition: 0.15s ease-out;
+        &:hover{
+          color: $grey;
+        }
+        &--prev{
+          left: -52px;
+        }
+        &--next{
+          right: -52px;
+        }
+      }
+
+      &__body{
+        position: relative;
+      }
+
+      // Block: Gallery
+      &__gallery{
+        height: 600px;
+      }
+
+      // Block: View
+      &__view{
+        top: 63px;
+        bottom: 90px;
+        left: 10px;
+        right: 10px;
+        position: absolute;
+      }
+
+      // Block: Tabs
+      &__tabs{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+      }
+
+      // Block: Footer
+      &__footer{
+        position: absolute;
+        right: 20px;
+        left: 20px;
+        bottom: 20px;
+      }
+
+      &__listing{
+        .card{
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    .details{
+      &__eye{
+        transition: 0.15s ease-out;
+        &:hover{
+          color: $blue;
+        }
+      }
+    }
+
+    .comments{
+      &__nav{
+        .nav{
+          &__link{
+            &:hover{
+              color: $blue;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Layout: Splash
+  // Size: Desktop Large
+  @media screen and (min-width: $grid-xl) {
+    .l-splash{
+      // Block: Actions
+      &__actions{
+        padding-left: 27px;
+      }
+
+      // Block: Content
+      &__content{
+        padding-left: 17px;
+        padding-right: 17px;
+      }
+
+      // Block: Tabs
+      &__tabs{
+        .nav{
+          &__link{
+            font-size: 1.4rem;
+            margin: 0 0.75em;
+            &:first-child{
+              margin-left: 0;
+            }
+            &:last-child{
+              margin-right: 0;
+            }
+          }
+          &__wrapper{
+            padding-left: 27px;
+          }
+        }
+      }
+
+      // Block: View
+      &__view{
+        bottom: 100px;
+        left: 17px;
+        right: 17px;
+      }
+
+      // Block: Footer
+      &__footer{
+        right: 27px;
+        left: 27px;
+        bottom: 27px;
+      }
+
+    }
+
+    // Module: Description
+    .description{
+      .scroll{
+        margin-left: -17px;
+        margin-right: -17px;
+        &__container{
+          padding: 0 27px;
+        }
+      }
+    }
+
+    // Module: Comments
+    .comments{
+      .scroll{
+        margin-left: -17px;
+        margin-right: -17px;
+      }
+    }
+
+    // Module: Seller
+    .seller{
+      // Block: Map
+      &__map{
+        // margin-left: -17px;
+        // margin-right: -17px;
+      }
+    }
+  }
+
+  // Layout: Splash
+  // Size: Desktop Small
+  @media screen and (min-width: $grid-lg)
+  and (max-width: $grid-xl) {
+    .l-splash{
+      // Block: Action
+      // Parent: Footer
+      &__action{
+        .button{
+          font-size: 1.3rem;
+        }
+      }
+    }
+  }
+
+  // Layout: Splash
+  // Size: Tablet
+  @media screen and (min-width: $grid-md)
+  and (max-width: $grid-lg) {
+    padding: 0 20px;
+
+    .l-splash{
+      // Block: Close
+      &__close{
+        right: 23px;
+        top: -7px;
+        font-size: 3rem;
+      }
+
+      // Block: Tabs
+      &__tabs{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+      }
+
+      &__arrow{
+        display: none;
+      }
+
+      // Block: View
+      &__view{
+        top: 63px;
+        bottom: 90px;
+        left: 10px;
+        right: 10px;
+        position: absolute;
+      }
+
+      &__arrow{
+        top: 0px;
+        font-size: 3.5rem;
+        left: inherit;
+        line-height: 100%;
+        &--prev{
+          right: 60px;
+        }
+        &--next{
+          right: 20px;
+        }
+      }
+
+      // Block: Gallery
+      &__gallery{
+        height: 600px;
+      }
+
+      // Block: Footer
+      &__footer{
+        position: absolute;
+        right: 20px;
+        left: 20px;
+        bottom: 20px;
+      }
+
+      // Block: Action
+      // Parent: Footer
+      &__action{
+        .button{
+          font-size: 1.3rem;
+        }
+      }
+
+      &__related-title{
+        font-size: 1.9rem;
+      }
+
+      &__listing{
+        margin: 0 -12px;
+        .card{
+          margin: 0;
+          padding-left: 12px;
+          padding-right: 12px;
+        }
+      }
+
+      &__related-paginated{
+        padding-bottom: 58px;
+      }
+
+      &__loadmore{
+        &--wrapper{
+          position: absolute;
+          left: 0px;
+          bottom: -20px;
+          right: 0px;
+          padding: 10px;
+        }
+      }
+    }
+  }
+
+  // Layout: Splash
+  // Size: Smartphone
+  @media screen and (max-width: $grid-md) {
+    padding: 0;
+
+    .l-splash{
+      &__close{
+        top: 10px;
+        right: 17px;
+        font-size: 2.7rem;
+      }
+
+      &__header{
+        padding-top: 15px;
+      }
+
+      &__actions{
+        padding-bottom: 10px;
+      }
+
+      &__body{
+        box-shadow: none;
+        border-bottom: 1px solid #e6edf2;
+      }
+
+      &__tabs{
+        .nav__wrapper{
+          padding-left: 10px;
+        }
+      }
+
+      &__footer{
+        margin-top: 20px;
+        float: left;
+        width: 100%;
+        padding: 10px 10px 20px;
+        clear: both;
+      }
+
+      &__total{
+        float: left;
+      }
+
+      &__action{
+        float: left;
+      }
+    }
+
+    // Module: Details
+    // Size: Smartphone
+    .details{
+      margin-top: 0;
+
+      // Block: Duration
+      &__duration{
+        margin-top: 0;
+      }
+
+      // Block: Form
+      &__form{
+        padding-top: 0;
+      }
+
+      // Block: Eye
+      &__eye{
+        display: none;
+      }
+
+      // Block: Right
+      &__right{
+        margin-top: 20px;
+      }
+      .number{
+        width: 110px !important;
+      }
+    }
+
+    // Module: Comments & Description
+    // Size: Smartphone
+    .comments, .description{
+      padding-top: 0;
+      .scroll{
+        &:after{
+          content: none;
+        }
+        &__container{
+          max-height: none;
+          padding-bottom: 0;
+        }
+      }
+      .text{
+        :first-child{
+          margin-top: 0;
+        }
+      }
+    }
+
+    // Module: Seller
+    // Size: Seller
+    .seller{
+      padding-top: 0;
+      &__right{
+        text-align: left;
+        .button{
+          margin-bottom: 30px;
+        }
+      }
+    }
+
+    // Block: Related
+    &__related{
+      background: $background;
+    }
+
+    // Block: Related Title
+    // Parerent: Related
+    &__related-title{
+      text-align: center;
+      &:before{
+        content: "";
+        right: 70%;
+        left: 0%;
+      }
+      &:after{
+        left: 70%;
+      }
+    }
+
+    // Block: Listing
+    &__listing{
+      .card{
+        margin-bottom: 30px;
+      }
+      .l-splash{
+        &__related-paginated{
+          .card{
+            &__date{
+              left: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Layout: Splash
+// Modifier: Event
+.l-splash--event{
+  // Module: Details
+  .details{
+    // Block: Left
+    &__left{
+      @extend .col-xs-12, .col-md-8;
+    }
+
+    // Block: Right
+    &__right{
+      @extend .col-xs-4, .col-md-2, .col-md-offset-1;
+    }
+  }
+}
+
+// Layout: Splash
+// Modifier: Upfront
+.l-splash--upfront{
+  // Module: Details
+  .details{
+    &__form{
+      padding-top: 30px;
+    }
+    &__left{
+      @extend .col-md-9;
+    }
+    &__right{
+      margin-top: 21px;
+      @extend .col-xs-4, .col-md-2;
+    }
+  }
+
+  // Layout: Splash
+  // Modifier: Upfront
+  // Size: Smartphone
+  @media screen and (max-width: $grid-md) {
+    .details{
+      &__form{
+        padding-top: 10px;
+      }
+    }
+  }
+  .l-splash{
+
+  }
+}
+
+// Layout: Splash
+// Modifier: Appointment
+.l-splash--appointment{
+  .details{
+    &__form{
+      padding-top: 30px;
+    }
+    &__set-appointment{
+      @extend .col-xs-12;
+
+      .button{
+        margin: 20px 0 30px;
+      }
+    }
+  }
+
+  // Layout: Splash
+  // Modifier: Appointment
+  // Size: Smartphone
+  @media screen and (max-width: $grid-md) {
+    .details{
+      &__form{
+        padding-top: 10px;
+      }
+    }
+  }
+  .l-splash{
+
+  }
+}
+
+// Layout: Splash
+// Modifier: Portfolio
+.l-splash--portfolio{
+  .l-splash{
+    &__action{
+      width: 100%;
+    }
+
+  }
+
+  .button--inquire{
+    .button{
+      &__icon{
+        @extend .ion-arrow-right-c;
+      }
+    }
+  }
+}

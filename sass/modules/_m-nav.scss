@@ -1,0 +1,623 @@
+// Module: Main Nav
+// Modifier: Main
+.nav--main{
+  .nav{
+    font-size: 2rem;
+
+    // Block: Link
+    &__link{
+      position: relative;
+      padding: 0.7em 0.5em 0.2em;
+      display: inline-block;
+      font-size: 2.5rem;
+      color: $light-grey;
+      transition: 0.15s ease-out;
+    }
+
+    // Block: Count
+    &__count{
+      position: absolute;
+      top: 15px;
+      right: 0;
+      border-radius: 20px;
+      background: $blue;
+      color: $white;
+      display: inline-block;
+      padding: 0.1em 0.5em 0.1em 0.4em;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+  }
+
+  // Module: Nav
+  // Modifier: Main
+  // Size: Desktop
+  @media screen and (min-width: $grid-lg) {
+    .nav{
+      &__link{
+        transition: 0.15s ease-out;
+        &:hover{
+          color: $blue;
+        }
+      }
+    }
+  }
+}
+
+// Module: Nav
+// Modifier: Primary
+.nav--primary{
+  .nav{
+    // Block: Wrapper
+    &__wrapper{
+      position: relative;
+    }
+
+    // Block: Link
+    &__link{
+      text-transform: uppercase;
+      display: inline-block;
+      padding: 1.25em 0 1.1em;
+      margin: 0 0.75em;
+      font-size: 1.5rem;
+      color: $grey;
+      border-bottom: 2px solid transparent;
+      &:first-child{
+        margin-left: 0;
+      }
+      &:last-child{
+        margin-right: 0;
+      }
+      &--btn{
+        background: transparent;
+        border: 0;
+      }
+    }
+
+    // Block: More
+    &__more{
+      color: $grey;
+      display: none;
+      @extend .dropdown;
+      .nav__link{
+        display: block;
+        padding: 0.25em 0.5em;
+        margin: 0;
+        &--btn{
+          font-size: 2.5rem;
+          padding: 20px 0;
+          height: 50px;
+          width: 25px;
+          position: relative;
+          @extend .ion-ios-more;
+          &:before{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+        }
+      }
+      .nav__dropdown{
+        padding: 0.25em;
+      }
+    }
+  }
+
+  // Module: Nav
+  // Modifier: Primary
+  // Size: Desktop
+  @media screen and (min-width: $grid-lg) {
+    .nav{
+      &__link{
+        transition: 0.15s ease-out;
+        &:hover{
+          color: $blue;
+        }
+      }
+    }
+  }
+
+  // Module: Nav
+  // Modifier: Primary
+  // Size: Smartphone
+  @media screen and (max-width: $grid-md) {
+    &:before, &:after{
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 30px;
+      z-index: 15;
+    }
+    &:before{
+      left: 0;
+      background: linear-gradient(to right, $white 0%, rgba($white, 0) 100%);
+    }
+    &:after{
+      height: 59px;
+      right: 0;
+      background: linear-gradient(to left, $white 0%, rgba($white, 0) 100%);
+    }
+    .nav{
+      &__wrapper{
+        padding: 0 20px;
+        overflow-x: auto;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+      }
+    }
+  }
+}
+
+// Module: Nav
+// Modifier: Secondary
+.nav--secondary{
+  border: 0 !important;
+
+  .nav{
+    // Block: Wrapper
+    &__wrapper{
+      position: relative;
+      &:before{
+        content: "";
+        position: absolute;
+        bottom: 0;
+        z-index: 1;
+        height: 2px;
+        left: 0;
+        right: 0;
+        background: #dee1e4;
+      }
+    }
+
+    // Block: Link
+    &__link{
+      text-transform: uppercase;
+      display: inline-block;
+      border-bottom: 2px solid transparent;
+      color: $grey;
+      padding: 1em 0;
+      margin: 0 0.75em;
+      font-size: 1.5rem;
+      font-weight: 500;
+      transition: 0.15s ease-out;
+      position: relative;
+      z-index: 5;
+    }
+
+    // Block: Label
+    &__label{
+      background-color: $light-grey;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-radius: 4px;
+      @extend .label;
+    }
+  }
+
+  // Modifier: Fade
+  &--fade{
+    .nav{
+      &__wrapper{
+        display: inline-block;
+        &:before{
+          left: -25px;
+          right: -25px;
+          background:  linear-gradient(to right, transparent 0%, #dee1e4 15%, #dee1e4 85%, transparent 100%);
+        }
+      }
+    }
+  }
+
+  // Module: Nav
+  // Modifier: Secondary
+  // Size: Smartphone
+  @media screen and (max-width: $grid-md) {
+    position: relative;
+    .nav{
+      &__wrapper{
+        position: static;
+        &:before{
+          left: -9px;
+          right: -9px;
+          background: #dee1e4;
+        }
+      }
+      &__link{
+        padding: 0.8em 0;
+      }
+    }
+  }
+}
+
+// Module: Nav
+// Modifier: Numbers
+.nav--numbers{
+  .nav{
+    // Block: Link
+    &__link{
+      display: inline-block;
+      font-size: 1.3rem;
+      position: relative;
+      padding-left: 1.25em;
+      &:before{
+        content: "";
+        position: absolute;
+        width: 1px;
+        left: 10px;
+        top: 0;
+        bottom: 0;
+        background: $grey;
+      }
+      &:first-child:before{
+        content: none;
+      }
+      &--amount{
+        padding: 0 0.5em;
+        font-weight: 600;
+        display: inline-block;
+      }
+    }
+  }
+}
+
+// Module: Nav
+// Modifier: Followers
+.nav--followers{
+  .nav{
+    // Block: Link
+    &__link{
+      color: $grey;
+      display: inline-block;
+      padding-left: 0.5em;
+      padding-right: 0.5em;
+      &--follow{
+        .nav__icon{
+          background: $light-grey;
+          color: $white;
+          display: inline-block;
+          padding: 0em 0.75em;
+          border-radius: 40px;
+        }
+      }
+      &--followers, &--following{
+        position: relative;
+        padding-left: 25px;
+        .nav__icon{
+          font-size: 2rem;
+          position: absolute;
+          left: 0;
+          top: 50%;
+          transform: translate(0, -50%);
+          color: #a6b0b7;
+          @extend .hidden-lg-up;
+        }
+      }
+      &--followers{
+        .nav__icon{
+          @extend .cz-icon, .cz-icon-followers;
+        }
+      }
+      &--following{
+        .nav__icon{
+          @extend .cz-icon, .cz-icon-following;
+        }
+      }
+    }
+
+    // Block: Icon
+    &__icon{
+
+    }
+
+    // Block: Text
+    &__text{
+      display: inline-block;
+    }
+
+    // Block: Title
+    &__title{
+      color: $light-grey;
+      display: inline-block;
+      padding-left: 5px;
+      @extend .hidden-md-down;
+    }
+  }
+
+  // Module: Nav
+  // Modifier: Followers
+  // Size: Desktop
+  @media screen and (min-width: $grid-lg) {
+    .nav{
+      &__icon{
+        transition: 0.15s ease-out;
+      }
+      &__title{
+        transition: 0.15s ease-out;
+      }
+      &__link{
+        transition: 0.15s ease-out;
+        float: left;
+        &:hover{
+          color: $blue;
+          .nav__icon{
+            background: $blue;
+          }
+          .nav__title{
+            color: $blue;
+          }
+        }
+        &--followers, &--following{
+          padding-left: 0.5em;
+          font-size: 1.3rem;
+          padding-top: 0.6em !important;
+        }
+      }
+    }
+  }
+}
+
+// Module: Nav
+// Modifier: Display
+.nav--display{
+  .nav{
+    // Block: Link
+    &__link{
+      background: transparent;
+      border: 0;
+      font-size: 3rem;
+      color: $light-grey;
+      position: relative;
+      padding-left: 15px;
+      margin-left: 5px;
+      &:after{
+        content: "";
+        position: absolute;
+        width: 1px;
+        top: 15px;
+        bottom: 15px;
+        left: 0;
+        background: $light-grey;
+      }
+      &:first-child{
+        padding-left: 5px;
+        &:after{
+          content: none;
+        }
+      }
+      &.cz-icon{
+        font-size: 2.5rem;
+        padding-top: 10.5px;
+        padding-bottom: 10.5px;
+        &:after{
+          top: 15px;
+          bottom: 15px;
+        }
+      }
+    }
+  }
+
+  // Module: Nav
+  // Modifier: Display
+  // Size: Desktop
+  @media screen and (min-width: $grid-lg) {
+    .nav{
+      &__link{
+        transition: 0.15s ease-out;
+        &:hover{
+          color: $blue;
+        }
+      }
+    }
+  }
+}
+
+// Module: Nav
+// Modifier: Filter
+.nav--filter{
+  .nav{
+    // Block: Button
+    &__button{
+      background: transparent;
+      border: 0;
+      font-size: 2.3rem;
+      color: $light-grey;
+      padding: 0.3em 0.5em 0.25em;
+      border-radius: 4px 4px 0 0;
+      @extend .dropdown-toggle, .cz-icon, .cz-icon-filter;
+      &:after{
+        top: -4px;
+        position: relative;
+        margin-left: 10px;
+        border-width: 0.25em;
+        margin-right: 0;
+      }
+    }
+
+    // Block: Link
+    &__link{
+      font-size: 1.4rem;
+    }
+
+    // Block: Dropdown
+    &__dropdown{
+      background: $blue;
+      border-radius: 4px 0px 4px 4px;
+      margin-top: -1px;
+      border: 0;
+      box-shadow: 0 0 4px rgba(#546069, 0.8);
+      z-index: -1;
+      @extend .dropdown-menu-right;
+      .nav{
+        &__link{
+          background: transparent;
+          color: $white;
+          padding: 0.5em 1.5em;
+          display: block;
+          font-size: 1.4rem;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+
+  // State: Open
+  &.open{
+    .nav{
+      &__button{
+        box-shadow: 0 0 4px rgba(#546069, 0.8);
+        background: $blue;
+        color: $white;
+      }
+    }
+    &:after{
+      content: "";
+      position: absolute;
+      bottom: -4px;
+      left: -10px;
+      right: 0;
+      height: 5px;
+      background: $blue;
+    }
+  }
+
+  // Module: Nav
+  // Modifier: Filter
+  // Size: Desktop
+  @media screen and (min-width: $grid-lg) {
+    .nav{
+      &__button{
+        &:before, &:after{
+          transition: 0.15s ease-out;
+        }
+        &:hover:before, &:hover:after{
+          color: $blue;
+        }
+      }
+      &__dropdown{
+        .nav{
+          &__link{
+            transition: 0.15s ease-out;
+            &:hover{
+              background: $dark-blue;
+            }
+          }
+        }
+      }
+    }
+
+    // State: Open
+    &.open{
+      .nav{
+        &__button{
+          &:hover:before, &:after{
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Module: Nav
+// Modifier: Icons
+.nav--icons{
+  .nav{
+    // Block: Link
+    &__link{
+      position: relative;
+      padding: 0 20px 0 15px;
+    }
+
+    // Block: Icon
+    &__icon{
+      position: absolute;
+      top: 50%;
+      left: 0;
+      font-size: 1.8rem;
+      transform: translate(0, -50%);
+    }
+  }
+}
+
+
+.nav--actions{
+  .nav{
+    &__link{
+      background-color: transparent;
+      border: 0;
+      color: $light-grey;
+    }
+    &__icon{
+      font-size: 2rem;
+      vertical-align: middle;
+      line-height: 100%;
+    }
+    &__count{
+      font-size: 1.2rem;
+    }
+    &__caption{
+      font-size: 1.2rem;
+      @extend .hidden-lg-up;
+    }
+  }
+
+  // Module: Nav
+  // Modifier: Display
+  // Size: Desktop
+  @media screen and (min-width: $grid-lg) {
+    .nav{
+      &__link{
+        transition: 0.15s ease-out;
+        &:hover{
+          color: $blue;
+        }
+      }
+    }
+  }
+}
+
+// Module: Nav
+// Modifier: Small
+.nav--small{
+  .nav{
+    // Block: Link
+    &__link{
+      font-size: 1.2rem;
+    }
+  }
+}
+
+// Module: Nav
+// Modifier: X-Small
+.nav--x-small{
+  .nav{
+    // Block: Link
+    &__link{
+      font-size: 1.1rem;
+    }
+  }
+}
+
+// Module: Nav
+// Modifier: Inline
+.nav--inline{
+  .nav{
+    // Block: Link
+    &__link{
+      display: inline-block;
+      padding: 0 5px;
+      &:first-child{
+        padding-left: 0;
+      }
+      &:last-child{
+        padding-right: 0;
+      }
+    }
+  }
+}
+
+// States
+@import "states/s-nav";

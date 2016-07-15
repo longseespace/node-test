@@ -1,0 +1,72 @@
+// Module: Breadcrumb
+.breadcrumb{
+  background: transparent;
+  padding: 0;
+  margin: 0;
+
+  // Module: Breadcrumb
+  // Size: Desktop
+  @media screen and (min-width: $grid-lg) {
+    .breadcrumb{
+      //
+    }
+  }
+
+  // Module: Breadcrumb
+  // Size: Tablet
+  @media screen and (min-width: $grid-md)
+  and (max-width: $grid-lg) {
+    .breadcrumb{
+      //
+    }
+  }
+
+  // Module: Breadcrumb
+  // Size: Smartphone
+  @media screen and (max-width: $grid-md) {
+    .breadcrumb{
+      //
+    }
+  }
+}
+
+// Module: Breadcrumb
+// Modifier: Small
+.breadcrumb--small{
+  .breadcrumb{
+    // Block: Item
+    &__item{
+      font-size: 1.2rem;
+    }
+  }
+
+  // Module: Breadcrumb
+  // Modifier: Small
+  // Size: Desktop
+  @media screen and (min-width: $grid-lg) {
+    .breadcrumb{
+      //
+    }
+  }
+
+  // Module: Breadcrumb
+  // Modifier: Small
+  // Size: Tablet
+  @media screen and (min-width: $grid-md)
+  and (max-width: $grid-lg) {
+    .breadcrumb{
+      //
+    }
+  }
+
+  // Module: Breadcrumb
+  // Modifier: Small
+  // Size: Smartphone
+  @media screen and (max-width: $grid-md) {
+    .breadcrumb{
+      //
+    }
+  }
+}
+
+@import "states/s-breadcrumb";

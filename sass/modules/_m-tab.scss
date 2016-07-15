@@ -1,0 +1,85 @@
+// Module: Tab
+.tab{
+
+}
+
+// Module: Tab
+// Modifier: Icons
+.tab--icons{
+  display: flex;
+  flex-flow: row wra;
+  .tab{
+    // Block Icon
+    &__icon{
+      font-size: 3rem;
+      position: relative;
+      @extend .cz-icon;
+    }
+
+    // Block: Count
+    &__count{
+      color: $white;
+      background: $light-grey;
+      border-radius: 10px;
+      position: absolute;
+      font-size: 1.1rem;
+      display: inline-block;
+      padding: 0.35em 0.3em;
+      line-height: 100%;
+    }
+
+    // Block: Text
+    &__text{
+      display: block;
+      font-weight: 600;
+    }
+
+    // Block: Link
+    &__link{
+      position: relative;
+      flex: 1;
+      text-align: center;
+      font-size: 1.2rem;
+      color: #a8b8c4;
+      font-weight: 600;
+      padding: 30px 0;
+      &.is-active{
+        color: $blue;
+        .tab__count{
+          background: $blue;
+        }
+      }
+      &--details{
+        .tab__icon{
+          @extend .cz-icon-info;
+        }
+      }
+      &--description{
+        .tab__icon{
+          @extend .cz-icon-description;
+        }
+      }
+      &--comments{
+        .tab__icon{
+          @extend .cz-icon-comment;
+        }
+        .tab__count{
+          left: 50%;
+          top: 4px;
+          margin-left: -1px;
+          transform: translate(-50%, 0);
+          background: transparent !important;
+        }
+      }
+      &--seller{
+        .tab__icon{
+          @extend .cz-icon-shop;
+        }
+        .tab__count{
+          right: -10px;
+          top: -5px;
+        }
+      }
+    }
+  }
+}

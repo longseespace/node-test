@@ -1,0 +1,299 @@
+// Layout: Header
+.l-header{
+  background: $white;
+  border-bottom: 3px solid #dee1e4;
+
+  // Block: Brand
+  &__brand{
+    margin: 0.75em 0 0.6em;
+    font-size: 2.6rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    a{
+      color: $grey;
+    }
+    @extend .col-xs-3, .col-lg-1;
+  }
+
+  // Block: Search
+  &__search{
+    padding-top: 0.9em;
+    padding-left: 60px;
+    position: relative;
+    @extend .col-xs-12, .col-md-5, .col-xl-6;
+    .form{
+      &__label{
+        width: 50%;
+        float: left;
+        .ion-ios-search-strong{
+          font-size: 2.8rem;
+          position: absolute;
+          left: 0;
+          top: 50%;
+          margin-top: -1px;
+          transform: translate(0, -50%);
+        }
+      }
+    }
+  }
+
+  // Block: Hamguerger
+  &__hamburger{
+    background: transparent;
+    border: 0;
+    color: $light-grey;
+    &:before{
+      position: relative;
+      top: 2px;
+    }
+    // @extend .ion-navicon;
+    &--search{
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      font-size: 2.8rem;
+      padding: 0.2em 0.4em;
+      transform: translate(0, -50%);
+      @extend .hidden-md-down;
+      &:after{
+        position: absolute;
+        content: "";
+        width: 1px;
+        right: 0;
+        top: 16px;
+        bottom: 14px;
+        background: $light-grey;
+      }
+    }
+    &--smartphone{
+      @extend .hidden-md-up;
+    }
+  }
+
+  // Block: Login
+  &__login{
+    button{
+      margin: 15px 10px;
+      font-size: 1.4rem;
+    }
+  }
+
+  .nav--main{
+    .nav{
+      &__link{
+        &--home, &--messages, &--dashboard{
+          @extend .hidden-sm-down;
+        }
+        &--search{
+          background: transparent;
+          border: 0;
+          padding: 0.25em 0.3em 0.1em;
+          font-size: 3.2rem;
+          .nav__icon{
+            @extend .ion-ios-search-strong;
+          }
+          @extend .hidden-lg-up;
+        }
+        &--home{
+          .nav__icon{
+            @extend .cz-icon, .cz-icon-home;
+          }
+        }
+        &--messages{
+          .nav__icon{
+            @extend .cz-icon, .cz-icon-inbox;
+          }
+        }
+        &--notifications{
+          .nav__icon{
+            @extend .cz-icon, .cz-icon-bell;
+          }
+        }
+        &--cart{
+          .nav__icon{
+            @extend .cz-icon, .cz-icon-cart-add-outline;
+          }
+        }
+        &--dashboard{
+          .nav__icon{
+            @extend .cz-icon, .cz-icon-dashboard;
+          }
+        }
+        &--hamburger{
+          position: absolute;
+          top: 50%;
+          right: 0;
+          transform: translate(0, -50%);
+          background: transparent;
+          border: 0;
+          font-size: 2rem;
+          color: $grey;
+          @extend .cz-icon, .cz-icon-hamburger, .hidden-md-up;
+        }
+      }
+    }
+    @extend .col-xs-9, .col-lg-6, .col-xl-5, .text-xs-right;
+  }
+
+  .user-status{
+    padding: 1.6em 0 1.5em 65px;
+    @extend .hidden-sm-down;
+  }
+}
+
+// Layout: Header
+// Size: Desktop
+@media screen and (min-width: $grid-lg) {
+
+}
+
+// Layout: Header
+// Size: Tablet
+@media screen and (max-width: $grid-lg)
+and (min-width: $grid-md) {
+  .l-header{
+    position: relative;
+
+    // Block: Brand
+    &__brand{
+      margin: 0.6em 0 0.5em;
+    }
+
+    // Block: Search
+    &__search{
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      width: auto;
+      padding: 5px 20px 0;
+      background: $white;
+      margin-top: 2px;
+      display: none;
+      border-bottom: 1px solid #dee1e4;
+      .form{
+        &__input{
+          font-size: 1.2rem;
+        }
+        &__label{
+          .ion-ios-search-strong{
+            font-size: 2.3rem;
+          }
+          .cz-icon{
+            font-size: 2rem;
+          }
+        }
+      }
+    }
+
+    .nav--main{
+      .nav{
+        &__link{
+          padding: 0.6em 0.5em 0.2em;
+          &--search{
+            padding: 0.15em 0.3em 0.1em;
+          }
+        }
+      }
+    }
+
+    .user-status{
+      padding: 1.4em 0 1.3em 65px;
+    }
+  }
+
+  .l-header--show-search{
+    margin-bottom: 50px;
+    .l-header__search{
+      display: block;
+    }
+
+    .nav--main{
+      .nav{
+        &__link{
+          &--search{
+            color: $blue;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Layout: Header
+// Size: Smartphone
+@media screen and (max-width: $grid-md) {
+  .l-header{
+    position: relative;
+    .container{
+      padding: 0;
+    }
+
+    // Block: Brand
+    &__brand{
+      margin: 0.6em 0 0.5em;
+    }
+
+    // Block: Search
+    &__search{
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      width: auto;
+      padding: 5px 10px 0;
+      background: $white;
+      margin-top: 2px;
+      display: none;
+      border-bottom: 1px solid #dee1e4;
+      .form{
+        &__input{
+          font-size: 1.2rem;
+        }
+        &__label{
+          .ion-ios-search-strong{
+            font-size: 2.3rem;
+          }
+          .cz-icon{
+            font-size: 2rem;
+          }
+        }
+      }
+    }
+
+    .nav--main{
+      padding-right: 50px;
+      .nav{
+        &__link{
+          padding: 0.7em 0.5em 0.3em;
+          font-size: 2.3rem;
+          &--search{
+            font-size: 2.9rem;
+            padding: 0.15em 0.3em 0.1em;
+          }
+          &--hamburger{
+            font-size: 2rem;
+            padding: 0.7em 0.5em 0.5em;
+          }
+        }
+      }
+    }
+  }
+
+  .l-header--show-search{
+    margin-bottom: 50px;
+    .l-header__search{
+      display: block;
+    }
+
+    .nav--main{
+      .nav{
+        &__link{
+          &--search{
+            color: $blue;
+          }
+        }
+      }
+    }
+  }
+}

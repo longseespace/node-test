@@ -1,0 +1,17 @@
+<div bsModal
+  #authModal="bs-modal"
+  (onHidden)="onHidden($event)"
+  class="modal fade"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="authModal"
+  aria-hidden="true">
+
+  <div class="modal-dialog modal-lg">
+    <div class="l-auth__wrapper">
+      <button (click)="authModal.hide()" class="l-auth__close"></button>
+
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

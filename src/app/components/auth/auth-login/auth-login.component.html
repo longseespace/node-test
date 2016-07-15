@@ -1,0 +1,29 @@
+<div class="l-auth__body">
+  <header class="l-auth__header">
+    <h1 class="l-auth__title">Log In</h1>
+  </header>
+
+  <button class="l-auth__provider l-auth__provider--linkedin button button--filled" (click)="authenticate('linkedin')">
+    <span class="l-auth__provider-icon"></span>
+    Log In with Linked In
+  </button>
+
+  <div class="l-auth__divisor">Or</div>
+
+  <form class="form form--default" (submit)="authenticate()">
+    <div class="l-auth__email form__group">
+      <label class="form__label">E-mail</label>
+      <input type="text" name="email" [(ngModel)]="email" placeholder="" class="form__input" required/>
+    </div>
+    <div class="l-auth__password form__group">
+      <label class="form__label">Password</label>
+      <input type="password" name="password" [(ngModel)]="password" placeholder="" class="form__input" required/>
+    </div>
+  </form>
+</div>
+
+<footer class="l-auth__footer">
+  <a [routerLink]="['../password']" class="l-auth__forgot-password">Forgot password?</a>
+  <button (click)="authenticate()" class="l-auth__continue button button--filled button--primary button--lg" >Log In</button>
+  <p class="l-auth__existing">Do not have an account? <a [routerLink]="['../register']">Sign Up!</a></p>
+</footer>

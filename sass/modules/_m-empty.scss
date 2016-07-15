@@ -1,0 +1,59 @@
+// Module: Empty
+.empty{
+  // Module: Empty
+  // Size: Desktop
+  @media screen and (min-width: $grid-lg) {
+    .empty{
+      //
+    }
+  }
+
+  // Module: Empty
+  // Size: Tablet
+  @media screen and (min-width: $grid-md)
+  and (max-width: $grid-lg) {
+    .empty{
+      //
+    }
+  }
+
+  // Module: Empty
+  // Size: Smartphone
+  @media screen and (max-width: $grid-md) {
+    .empty{
+      //
+    }
+  }
+}
+
+// Module: Empty
+// Modifier: Modifier
+.empty--modifier{
+  // Module: Empty
+  // Modifier: Modifier
+  // Size: Desktop
+  @media screen and (min-width: $grid-lg) {
+    .empty{
+      //
+    }
+  }
+
+  // Module: Empty
+  // Modifier: Modifier
+  // Size: Tablet
+  @media screen and (min-width: $grid-md)
+  and (max-width: $grid-lg) {
+    .empty{
+      //
+    }
+  }
+
+  // Module: Empty
+  // Modifier: Modifier
+  // Size: Smartphone
+  @media screen and (max-width: $grid-md) {
+    .empty{
+      //
+    }
+  }
+}

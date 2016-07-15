@@ -1,0 +1,493 @@
+// Module: Gallery
+.gallery--primary{
+  background: $white;
+
+  .swiper-container{
+    height: 100%;
+    z-index: auto;
+  }
+
+  .gallery{
+    // Block: Overlay
+    &__overlay{
+      position: absolute;
+      top: 0;
+      bottom: 25%;
+      left: 0;
+      right: 0;
+      z-index: 50;
+    }
+
+    // Block: Nav
+    &__nav{
+      text-align: right;
+      position: relative;
+      padding: 10px 20px 20px;
+      background: rgba($grey, 0.7);
+      .nav{
+        &__link{
+          color: $white;
+          display: inline-block;
+          padding: 1em;
+          font-size: 1.3rem;
+          font-weight: 600;
+          position: relative;
+          background-color: transparent;
+          border: 0;
+          &--fullscreen{
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translate(0, -50%);
+            .nav__icon{
+              font-size: 2rem;
+              @extend .cz-icon, .cz-icon-fullscreen;
+            }
+          }
+          &--collect .nav__icon{
+            @extend .ion-plus;
+          }
+          &--shop .nav__icon{
+            font-size: 2rem;
+            @extend .cz-icon, .cz-icon-cart-add-outline;
+          }
+          &--invite .nav__icon{
+            font-size: 2rem;
+            @extend .cz-icon, .cz-icon-invite;
+          }
+          &--share .nav__icon{
+            &:before{
+              margin-left: -1px;
+            }
+            @extend .ion-android-share-alt;
+          }
+        }
+
+        &__icon{
+          width: 45px;
+          height: 45px;
+          display: block;
+          font-size: 2rem;
+          margin-bottom: 5px;
+          border: 1px solid rgba($white, 0.9);
+          border-radius: 45px;
+          position: relative;
+          &:before{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+        }
+
+        &__text{
+          position: absolute;
+          left: 50%;
+          bottom: -5px;
+          transform: translate(-50%, -0);
+          white-space: nowrap;
+          @extend .hidden-md-down;
+        }
+      }
+    }
+
+    // Block: Slide
+    &__slide{
+      background-size: cover;
+      background-position: center;
+      min-height: 340px;
+      overflow: hidden;
+    }
+
+    // Block: Arrow
+    &__arrow{
+      position: absolute;
+      bottom: 25px;
+      width: 40px;
+      height: 40px;
+      border-radius: 40px;
+      border: 1px solid $blue;
+      z-index: 15;
+      background: $blue;
+      .arrow__icon{
+        color: $white;
+        font-size: 2.4rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      &--next{
+        right: 25px;
+        .arrow__icon{
+          &:before{
+            margin-left: 1px;
+          }
+          @extend .ion-ios-arrow-right;
+        }
+      }
+      &--prev{
+        right: 85px;
+        .arrow__icon{
+          &:before{
+            margin-right: 1px;
+          }
+          @extend .ion-ios-arrow-left;
+        }
+      }
+      &.swiper-button-disabled{
+        opacity: 0.3;
+        cursor: default;
+      }
+    }
+
+    // Block: Pagination
+    &__pagination{
+      position: absolute;
+      bottom: 15px !important;
+      left: 20px !important;
+      width: auto !important;
+      z-index: 10;
+    }
+
+    // Block: Bullet
+    &__bullet{
+      width: 17px;
+      height: 17px;
+      border-radius: 17px;
+      display: inline-block;
+      margin: 5px;
+      border: 1px solid $blue;
+      cursor: pointer;
+      background: $white;
+      &.is-active{
+        background: $blue;
+        border-color: $blue;
+      }
+    }
+  }
+
+  // Module: Gallery
+  // Size: Desktop
+  @media screen and (min-width: $grid-lg) {
+    .gallery{
+      // Block: Overlay
+      &__overlay{
+        &:hover{
+          .gallery__nav{
+            opacity: 1;
+          }
+        }
+      }
+      // Block: Nav
+      // Parent: Overlay
+      &__nav{
+        transition: 0.3s ease-out;
+        opacity: 0;
+        .nav__icon{
+          transition: 0.15s ease-out;
+        }
+        .nav__link{
+          &:hover{
+            .nav__icon{
+              background: $blue;
+              border-color: $blue;
+            }
+          }
+        }
+      }
+
+      // Block: Arrow
+      &__arrow{
+        transition: 0.15s ease-out;
+      }
+
+      // Block: Bullet
+      &__bullet{
+        transition: 0.15s ease-out;
+        &:hover{
+          background: $blue;
+          border: $blue;
+        }
+      }
+    }
+  }
+
+  // Module: Gallery
+  // Size: Tablet
+  @media screen and (min-width: $grid-md)
+  and (max-width: $grid-lg) {
+    position: relative;
+    &:before{
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 75px;
+      background: linear-gradient(to bottom, rgba(#142b40, 0), rgba(#142b40, 0.7) 100%);
+      z-index: 5;
+    }
+
+    .gallery{
+      &__overlay{
+        position: static;
+      }
+
+      &__nav{
+        background: transparent;
+        bottom: 0;
+        right: 15px;
+        left: 50%;
+        position: absolute;
+        z-index: 10;
+        padding: 0;
+        .nav{
+          &__link{
+            padding: 0.25em;
+            &--fullscreen{
+              display: none;
+            }
+          }
+        }
+      }
+
+      &__pagination{
+        bottom: 20px !important;
+        left: 15px !important;
+      }
+
+      &__bullet{
+        width: 12px;
+        height: 12px;
+        margin: 2px;
+        background: transparent;
+        border-color: $white;
+        &.is-active{
+          background: $blue;
+          border-color: $blue;
+        }
+      }
+
+      &__arrow{
+        display: none;
+      }
+    }
+  }
+
+  // Module: Gallery
+  // Size: Smartphone
+  @media screen and (max-width: $grid-md) {
+    position: relative;
+    &:before{
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 75px;
+      background: linear-gradient(to bottom, rgba(#142b40, 0), rgba(#142b40, 0.7) 100%);
+      z-index: 5;
+    }
+
+    .gallery{
+      &__overlay{
+        position: static;
+      }
+
+      &__nav{
+        background: transparent;
+        bottom: 0;
+        right: 15px;
+        left: 50%;
+        position: absolute;
+        z-index: 10;
+        padding: 0;
+        .nav{
+          &__link{
+            padding: 0.25em;
+            &--fullscreen{
+              display: none;
+            }
+          }
+        }
+      }
+
+      &__pagination{
+        bottom: 20px !important;
+        left: 15px !important;
+      }
+
+      &__bullet{
+        width: 12px;
+        height: 12px;
+        margin: 2px;
+        background: transparent;
+        border-color: $white;
+        &.is-active{
+          background: $blue;
+          border-color: $blue;
+        }
+      }
+
+      &__arrow{
+        display: none;
+      }
+    }
+  }
+}
+
+// Module: Gallery
+// Modifier: Full
+.gallery--full{
+  position: fixed;
+  top: -100%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2000;
+  min-width: $grid-md;
+  background: $white;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s ease-out;
+
+  .gallery{
+    // Block: Close
+    &__close{
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      background: $blue;
+      border-radius: 40px;
+      color: $white;
+      z-index: 100;
+      width: 40px;
+      height: 40px;
+      font-size: 3.2rem;
+      @extend .ion-ios-close-empty;
+    }
+
+    // Block: Arrow
+    &__arrow{
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      top: 50%;
+      border-radius: 40px;
+      border: 1px solid $blue;
+      z-index: 15;
+      background: $blue;
+      transform: translate(0, -50%);
+      .arrow__icon{
+        color: $white;
+        font-size: 2.4rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      &--next{
+        right: 30px;
+        .arrow__icon{
+          &:before{
+            margin-left: 1px;
+          }
+          @extend .ion-ios-arrow-right;
+        }
+      }
+      &--prev{
+        left: 30px;
+        .arrow__icon{
+          &:before{
+            margin-right: 1px;
+          }
+          @extend .ion-ios-arrow-left;
+        }
+      }
+      &.swiper-button-disabled{
+        opacity: 0.3;
+        cursor: default;
+      }
+    }
+
+    // Block: Pagination
+    &__pagination{
+      position: absolute;
+      left: 50%;
+      bottom: 25px;
+      transform: translate(-50%, 0);
+      width: auto;
+      z-index: 10;
+    }
+
+    // Block: Bullet
+    &__bullet{
+      width: 17px;
+      height: 17px;
+      border-radius: 17px;
+      display: inline-block;
+      margin: 0 5px;
+      border: 1px solid $blue;
+      cursor: pointer;
+      background: $white;
+      vertical-align: middle;
+      &.is-active{
+        background: $blue;
+        border-color: $blue;
+      }
+    }
+
+    &__image{
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .swiper-container {
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    overflow: hidden;
+  }
+
+  // Module: Gallery
+  // Modifier: Full
+  // Size: Desktop
+  @media screen and (min-width: $grid-lg) {
+    .gallery{
+
+    }
+  }
+
+  // Module: Gallery
+  // Modifier: Full
+  // Size: Tablet
+  @media screen and (min-width: $grid-xs)
+  and (max-width: $grid-lg) {
+    .gallery{
+
+    }
+  }
+
+  // Module: Gallery
+  // Modifier: Full
+  // Size: Smartphone
+  @media screen and (max-width: $grid-md) {
+    .gallery{
+
+    }
+  }
+}
+
+@import "states/s-gallery";

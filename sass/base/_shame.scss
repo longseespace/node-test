@@ -1,0 +1,44 @@
+.modal-backdrop{
+  background: black;
+  opacity: 0;
+  &.in{
+    opacity: 0.5;
+  }
+}
+
+.dropdown-menu{
+  font-size: 1.4rem;
+}
+
+.modal-dialog {
+  width: auto !important;
+
+  // Size: Smartphone
+  @media screen and (max-width: $grid-md) {
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 10px;
+  }
+}
+
+// Tablet
+@media screen and (max-width: $grid-lg)
+and (min-width: $grid-md) {
+  .container{
+    max-width: 100%;
+  }
+}
+
+// Smartphone
+@media screen and (max-width: $grid-md) {
+  .container{
+    max-width: 100%;
+  }
+
+  .modal-backdrop{
+    background: $white;
+    &.in{
+      opacity: 1;
+    }
+  }
+}

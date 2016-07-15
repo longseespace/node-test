@@ -1,0 +1,29 @@
+.nav--primary{
+  .nav{
+    &__link{
+      &.is-active{
+        border-color: $blue;
+      }
+    }
+  }
+}
+
+.nav--secondary{
+  .nav{
+    &__link{
+      &.is-active{
+        color: $blue;
+        border-color: $blue;
+        .nav__label{
+          background: $blue;
+        }
+      }
+      &:first-child{
+        margin-left: 0;
+      }
+      &:last-child{
+        margin-right: 0;
+      }
+    }
+  }
+}

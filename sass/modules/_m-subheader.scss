@@ -1,0 +1,46 @@
+// Module: Subheader
+.subheader{
+  position: relative;
+  padding: 15px 0;
+
+  // Block: title
+  &__title{
+    text-align: center;
+    font-size: 1.8rem;
+    margin: 0;
+  }
+
+  // Block: Primary
+  &__primary{
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translate(0, -50%);
+  }
+
+  // Block: Secondary
+  &__secondary{
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translate(0, -50%);
+  }
+
+  // Block: Button
+  &__button{
+    font-size: 2.8rem;
+    color: $blue;
+    background-color: transparent;
+    border: 0;
+
+    // Modifier: Prev
+    &--prev{
+      @extend .ion-ios-arrow-left;
+    }
+
+    // Modifier: Next
+    &--next{
+      @extend .ion-ios-arrow-right;
+    }
+  }
+}

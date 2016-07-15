@@ -1,0 +1,123 @@
+.l-home{
+  margin-top: 70px;
+
+  &__tabs{
+    margin-top: 1.5em;
+    margin-bottom: 1em;
+    text-align: center;
+    display: block;
+  }
+
+  &__listing{
+    display: flex;
+    flex-flow: row wrap;
+    @extend .row;
+    .card{
+      padding: 0 20px;
+      margin: 1.6em 0;
+      @extend .col-xs-12, .col-md-4;
+      &__date{
+        left: 20px;
+      }
+    }
+  }
+
+  .card-create{
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  // Block: Category
+  .l-auth__categories{
+    margin-bottom: 10px;
+    margin-top: 10px;
+    @extend .row;
+  }
+
+  // Block: Category
+  // Parent: Categories
+  .l-auth__category{
+    @extend .col-xs-12, .col-md-4;
+
+    .label{
+      font-size: 1.4rem;
+      background-color: #a8b8c4;
+      padding: 0.7em 2.5em 0.7em 1em;
+      font-weight: 500;
+      color: $white;
+      position: relative;
+      display: block;
+      text-align: left;
+    }
+  }
+
+  // Block: Category Close
+  // Parent: Category
+  .l-auth__category-close{
+    font-size: 1.4rem;
+    margin-left: 10px;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translate(0, -50%);
+    cursor: pointer;
+    @extend .ion-android-close;
+  }
+
+  &__user{
+    @extend .col-xs-12, .col-md-6;
+
+    footer{
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__form{
+    @extend .col-xs-12, .col-md-6;
+
+    footer{
+      margin-top: 20px;
+    }
+  }
+}
+
+// Tablet
+@media screen and (min-width: $grid-md)
+and (max-width: $grid-lg) {
+  .l-home{
+    &__listing{
+      margin: 0;
+      .card{
+        padding-left: 12px;
+        padding-right: 12px;
+      }
+    }
+  }
+}
+
+// Smartphone
+@media screen and (max-width: $grid-md) {
+  .l-home{
+    &__tabs{
+      margin-top: 0;
+    }
+
+    &__listing{
+      // margin: 0;
+      .card{
+        padding: 0;
+        margin-bottom: 30px;
+        margin-top: 0;
+        &__date{
+          left: 0;
+        }
+      }
+    }
+
+    .card-create{
+      margin-bottom: 0;
+      margin-top: 15px;
+    }
+  }
+}

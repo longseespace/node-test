@@ -1,0 +1,167 @@
+// Module: Box
+.box{
+  &__wrapper{
+    float: left;
+    width: 100%;
+    background: $white;
+    border: 1px solid #d0dce7;
+    border-radius: 2px;
+  }
+
+  &__title{
+    padding: 5px;
+    margin-bottom: 1em;
+  }
+
+  &__edit{
+    background-color: #d0dce7;
+    border: 0;
+    color: #727e88;
+    width: 40px;
+    font-size: 1.8rem;
+    display: none;
+    @extend .ion-edit;
+  }
+
+  &__input{
+    position: relative;
+    float: left;
+    clear: both;
+    margin-bottom: 1px;
+    line-height: 100%;
+    padding: 0.6em 20px 0.6em 5px;
+    font-size: 1.6rem;
+
+    .box__edit{
+      position: absolute;
+      left: 100%;
+      top: 0;
+      bottom: 0;
+    }
+
+    .list__icon{
+      left: 5px;
+      color: #a8b8c4;
+    }
+
+    &--sm{
+      font-size: 1.4rem;
+      padding: 0.5em 20px 0.5em 5px;
+      .box__edit{
+        width: 30px;
+        font-size: 1.4rem;
+      }
+    }
+  }
+
+  &__textarea{
+    .box__edit{
+      position: absolute;
+      left: 100%;
+      top: 0;
+      height: 36px;
+    }
+  }
+
+  &--edit{
+    .box{
+      &__input{
+        background: #eff6fd;
+      }
+
+      &__edit{
+        display: block;
+      }
+    }
+
+    .editable{
+      background: #f5f8f9;
+    }
+  }
+
+  .editable{
+    margin-left: -10px;
+    padding: 15px;
+    position: relative;
+  }
+
+  // Module: Box
+  // Size: Desktop
+  @media screen and (min-width: $grid-lg) {
+    .box{
+      &__wrapper{
+        padding: 30px;
+      }
+
+      &__edit{
+        transition: 0.15s ease-out;
+        &:hover{
+          background-color: $blue;
+          color: $white;
+        }
+      }
+    }
+    &--edit{
+      .editable{
+        cursor: pointer;
+        &__value{
+          transition: 0.15s ease-out;
+        }
+        &:hover{
+          .editable__value{
+            color: $blue;
+          }
+        }
+      }
+    }
+  }
+
+  // Module: Box
+  // Size: Tablet
+  @media screen and (min-width: $grid-md)
+  and (max-width: $grid-lg) {
+    .box{
+      //
+    }
+  }
+
+  // Module: Box
+  // Size: Smartphone
+  @media screen and (max-width: $grid-md) {
+    .box{
+      //
+    }
+  }
+}
+
+// Module: Box
+// Modifier: Edit
+.box--edit{
+  // Module: Box
+  // Modifier: Edit
+  // Size: Desktop
+  @media screen and (min-width: $grid-lg) {
+    .box{
+      //
+    }
+  }
+
+  // Module: Box
+  // Modifier: Edit
+  // Size: Tablet
+  @media screen and (min-width: $grid-md)
+  and (max-width: $grid-lg) {
+    .box{
+      //
+    }
+  }
+
+  // Module: Box
+  // Modifier: Edit
+  // Size: Smartphone
+  @media screen and (max-width: $grid-md) {
+    .box{
+      //
+    }
+  }
+}

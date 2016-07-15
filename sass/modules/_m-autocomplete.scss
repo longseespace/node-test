@@ -1,0 +1,36 @@
+.autocomplete{
+  position: relative;
+
+  &__inner{
+    background: #fff;
+    box-shadow: 0 0 20px #ccc;
+    border-radius: 0 0 4px 4px;
+  }
+
+  &__items{
+    width: 100%;
+    left: 0;
+    top: 80%;
+    transition: 0.15s ease-out;
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    z-index: 200;
+  }
+
+  &__item{
+    background: transparent;
+    border: 0;
+    width: 100%;
+    text-align: left;
+    padding: 0.5em 1em;
+    color: $grey;
+    position: relative;
+    z-index: 100;
+    &:last-child{
+      border-radius: 0 0 4px 4px;
+    }
+  }
+}
+
+@import "states/s-autocomplete";

@@ -1,0 +1,118 @@
+// Module: Comment
+.comment{
+  border-left: 3px solid transparent;
+  padding: 10px 15px 10px 15px;
+  float: left;
+  width: 100%;
+
+  &:nth-child(odd){
+    background-color: #f2f8fe;
+  }
+
+  // Block: Avatar
+  &__avatar{
+    @extend .col-xs-2;
+  }
+
+  // Block: User Image
+  // Parent: Avatar
+  &__user-image{
+    width: 100%;
+    height: auto;
+    border-radius: 200px;
+  }
+
+  // Block: Content
+  &__content{
+    @extend .col-xs-10;
+  }
+
+  // Block: Author
+  &__author{
+    font-weight: 600;
+    font-size: 1.4rem;
+    display: inline-block;
+  }
+
+  // Block: Time
+  &__time{
+    font-size: 1.2rem;
+    display: inline-block;
+    color: $light-grey;
+    padding-left: 10px;
+  }
+
+  // Block: Text
+  &__text{
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+  }
+
+  // Block: actions
+  &__actions{
+    .nav{
+      &__link{
+        &--up .nav__icon{
+          @extend .ion-thumbsup;
+        }
+        &--down .nav__icon{
+          @extend .ion-thumbsdown;
+        }
+        &--share .nav__icon{
+          @extend .ion-android-share;
+        }
+        &--report .nav__icon{
+          @extend .ion-ios-flag;
+        }
+      }
+    }
+  }
+
+  // Module: Comment
+  // Size: Tablet
+  @media screen and (min-width: $grid-md)
+  and (max-width: $grid-lg) {
+    .comment{
+      &__actions{
+        .nav{
+          &__link{
+            padding: 1px 8px;
+          }
+          &__icon{
+            font-size: 2.2rem;
+          }
+          &__caption, &__count{
+            font-size: 1.1rem;
+          }
+        }
+      }
+    }
+  }
+
+  // Module: Comment
+  // Size: Smartphone
+  @media screen and (max-width: $grid-md) {
+    .comment{
+      &__actions{
+        .nav{
+          &__link{
+            padding: 1px 8px;
+          }
+          &__icon{
+            font-size: 2.5rem;
+          }
+          &__caption, &__count{
+            font-size: 1.1rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+.comment{
+  &.is-active{
+    border-color: $blue;
+    // background-color: #f2f8fe;
+  }
+}

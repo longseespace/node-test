@@ -1,0 +1,11 @@
+.rank{
+  &--inline{
+    .rank{
+      &__star{
+        &.is-checked{
+          @extend .ion-android-star;
+        }
+      }
+    }
+  }
+}

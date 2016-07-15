@@ -1,0 +1,72 @@
+// Avatar module
+.avatar{
+  position: relative;
+  &:before{
+    content: "";
+    width: 0;
+    height: 0;
+    border-top: 55px solid $light-grey;
+    border-left: 55px solid transparent;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  &__badge{
+    position: absolute;
+    top: 0px;
+    right: 8px;
+    font-size: 2rem;
+    color: $white;
+    &--freelancer{
+      @extend .ion-person;
+    }
+  }
+  &__image{
+    width: 100%;
+    height: auto;
+  }
+}
+
+.avatar--drop-shadow{
+  box-shadow: 0 0 25px rgba($light-grey, 0.7);
+}
+
+.avatar--listing{
+  width: 45px;
+  height: 45px;
+  border-radius: 45px;
+  display: inline-block;
+  vertical-align: middle;
+  background-color: #d0dce7;
+  &:before{
+    content: none;
+  }
+
+  .avatar{
+    &__letter{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      color: $white;
+      font-size: 2.4rem;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+// Smartphone
+@media screen and (max-width: $grid-md) {
+  .avatar{
+    &:before{
+      border-top: 43px solid $light-grey;
+      border-left: 43px solid transparent;
+    }
+    &__badge{
+      font-size: 1.6rem;
+      top: -1px;
+      right: 7px;
+    }
+  }
+}
+
+@import "states/s-avatar";

@@ -1,0 +1,109 @@
+@charset "UTF-8";
+
+@include font-face(cyza, "../fonts/cyza", normal, normal, eot svg woff);
+
+.cz-icon{
+  line-height: 100%;
+}
+
+[data-icon]:before {
+  font-family: "cyza" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.cz-icon:before, [class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "cyza" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.cz-icon-bell:before {
+  content: "\61";
+}
+.cz-icon-cart:before {
+  content: "\62";
+}
+.cz-icon-inbox:before {
+  content: "\63";
+}
+.cz-icon-home:before {
+  content: "\64";
+}
+.cz-icon-marker:before {
+  content: "\65";
+}
+.cz-icon-dashboard:before {
+  content: "\66";
+}
+.cz-icon-hamburger:before {
+  content: "\67";
+}
+.cz-icon-profile:before {
+  content: "\68";
+}
+.cz-icon-previous:before {
+  content: "\69";
+}
+.cz-icon-next:before {
+  content: "\6a";
+}
+.cz-icon-invite:before {
+  content: "\6c";
+}
+.cz-icon-filter:before {
+  content: "\6d";
+}
+.cz-icon-cash:before {
+  content: "\6e";
+}
+.cz-icon-cart-add-outline:before {
+  content: "\6f";
+}
+.cz-icon-plus-circle:before {
+  content: "\6b";
+}
+.cz-icon-followers:before {
+  content: "\70";
+}
+.cz-icon-following:before {
+  content: "\71";
+}
+.cz-icon-glasses:before {
+  content: "\72";
+}
+.cz-icon-shop:before {
+  content: "\73";
+}
+.cz-icon-comment:before {
+  content: "\74";
+}
+.cz-icon-description:before {
+  content: "\75";
+}
+.cz-icon-info:before {
+  content: "\76";
+}
+.cz-icon-cart-checkout:before {
+  content: "\77";
+}
+.cz-icon-cart-add:before {
+  content: "\78";
+}
+.cz-icon-fullscreen:before {
+  content: "\79";
+}

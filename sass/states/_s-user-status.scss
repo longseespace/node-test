@@ -1,0 +1,17 @@
+.user-status{
+  &.is-offline{
+    .user-status__letter:before{
+      background: $light-grey;
+    }
+  }
+  &.is-online{
+    .user-status__letter:before{
+      background: $blue;
+    }
+  }
+  &.is-busy{
+    .user-status__letter:before{
+      background: $yellow;
+    }
+  }
+}

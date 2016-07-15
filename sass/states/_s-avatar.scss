@@ -1,0 +1,7 @@
+.avatar{
+  &.is-online{
+    &:before{
+      border-top-color: $blue;
+    }
+  }
+}

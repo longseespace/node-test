@@ -1,0 +1,16 @@
+.autocomplete{
+  &__items{
+    &.is-active{
+      opacity: 1;
+      top: 100%;
+      visibility: visible;
+    }
+  }
+
+  &__item{
+    &.is-active{
+      background: $blue;
+      color: $white;
+    }
+  }
+}

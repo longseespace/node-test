@@ -1,0 +1,132 @@
+// Module: Button
+.button{
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  font-weight: 600;
+  border-width: 1px;
+  border-radius: 0;
+  padding: 0.5em 1.5em;
+  background: transparent;
+  position: relative;
+  @extend .btn;
+
+  // Module: Empty
+  // Size: Desktop
+  @media screen and (min-width: $grid-lg) {
+    transition: 0.15s ease-out;
+  }
+
+  // Module: Empty
+  // Size: Tablet
+  @media screen and (min-width: $grid-md)
+  and (max-width: $grid-lg) {
+    .button{
+      //
+    }
+  }
+
+  // Module: Empty
+  // Size: Smartphone
+  @media screen and (max-width: $grid-md) {
+    .button{
+      //
+    }
+  }
+}
+
+// Module: Button
+// Modifier: Primary
+.button--primary{
+  color: $blue;
+  border-color: $blue;
+  &:hover{
+    color: $white;
+    background: $blue;
+  }
+}
+
+// Module: Button
+// Modifier: Secondary
+.button--secondary{
+  color: $light-grey;
+  border-color: $light-grey;
+  &:hover{
+    color: $white;
+    background: $light-grey;
+  }
+}
+
+// Module: Button
+// Modifier: Light
+.button--light{
+  color: $white;
+  border-color: $white;
+  &:hover{
+    color: $white;
+    background: $blue;
+    border-color: $blue;
+  }
+}
+
+// Module: Button
+// Modifier: Borderless
+.button--borderless{
+  border-color: transparent;
+  &:hover{
+    border-bottom-color: $blue;
+    background: transparent;
+    color: $blue;
+  }
+}
+
+// Module: Button
+// Modifier: Filled
+.button--filled{
+  border-radius: 3px;
+  &.button--primary{
+    background-color: $blue;
+    color: $white;
+  }
+}
+
+// Module: Button
+// Modifier: Small
+.button--sm{
+  font-size: 1.3rem;
+  padding: 4px 10px;
+}
+
+// Module: Button
+// Modifier: Large
+.button--lg{
+  font-weight: 700;
+  padding: 0.75em 1.75em;
+}
+
+// Module: Button
+// Modifier: Icon
+.button--icon{
+  padding-left: 40px;
+  .button{
+    &__icon{
+      position: absolute;
+      top: 50%;
+      left: 15px;
+      vertical-align: middle;
+      font-size: 2rem;
+      line-height: 100%;
+      transform: translate(0, -50%);
+    }
+  }
+}
+
+// Module: Button
+// Modifier: Close
+.button--close{
+  font-size: 3.5rem;
+  padding: 0;
+  color: $light-grey;
+  line-height: 100%;
+  border: 0;
+  @extend .ion-android-close;
+}

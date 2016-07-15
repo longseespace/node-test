@@ -1,0 +1,322 @@
+/*
+* Block: Form
+*/
+.form{
+  &__input{
+    width: 100%;
+  }
+}
+
+/*
+* Block: Form
+* Module: Default
+*/
+.form--default{
+  .form{
+    &__group{
+      clear: both;
+      position: relative;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    &__label{
+      font-size: 1.4rem;
+      margin-bottom: 0;
+      text-transform: uppercase;
+      font-size: 1.2rem;
+      color: $light-grey;
+      &--uppercase{
+      }
+    }
+
+    &__label-icon{
+      border: 0;
+      background: transparent;
+      font-size: 1.8rem;
+      vertical-align: middle;
+    }
+
+    &__wrapper{
+      position: relative;
+    }
+
+    &__input, &__select{
+      background-color: transparent;
+      padding-left: 0;
+      padding-right: 0;
+      border: 0;
+      border-bottom: 1px solid #ccc;
+      border-radius: 0;
+      font-size: 1.4rem;
+      @extend .form-control;
+
+      &--number{
+        text-align: center;
+      }
+
+      &--textarea{
+        padding-bottom: 10px;
+      }
+
+      &[disabled], &[readonly]{
+        background-color: transparent;
+        color: $light-grey;
+      }
+    }
+
+    &__select{
+      @extend .c-select;
+    }
+
+    &__number{
+      background: transparent;
+      border: 0;
+      font-size: 2rem;
+      line-height: 100%;
+      &:hover{
+        color: $blue;
+      }
+      &--up{
+        @extend .ion-ios-arrow-up;
+      }
+      &--down{
+        @extend .ion-ios-arrow-down;
+      }
+    }
+
+    &__icon{
+      position: absolute;
+      right: 0;
+      font-size: 2.4rem;
+      color: $light-grey;
+      bottom: 0;
+      background-color: transparent;
+      border: 0;
+      line-height: 120%;
+      padding: 2px 6px 3px;
+    }
+
+    &__caption{
+      text-align: right;
+      display: block;
+      font-size: 1.2rem;
+      color: #adb6bc;
+      line-height: 150%;
+      position: absolute;
+      top: 100%;
+      right: 0;
+    }
+
+    &__errors{
+      height: 0;
+      opacity: 0;
+      visibility: hidden;
+      transition: 0.15s ease-out;
+    }
+
+    &__error{
+      color: $red;
+      font-size: 1.2rem;
+    }
+  }
+
+  /*
+  * Block: Form
+  * Module: Default
+  * Size: Desktop
+  */
+  @media screen and (min-width: $grid-lg) {
+    .form{
+      &__icon, &__label-icon{
+        &:hover{
+          transition: 0.15s ease-out;
+          color: $blue;
+        }
+      }
+
+      &__label{
+        transition: 0.15s ease-out;
+      }
+    }
+  }
+
+  /*
+  * Block: Form
+  * Module: Default
+  * Size: Tablet
+  */
+  @media screen and (min-width: $grid-md)
+  and (max-width: $grid-lg) {
+    .form{
+      //
+    }
+  }
+
+  /*
+  * Block: Form
+  * Module: Default
+  * Size: Smartphone
+  */
+  @media screen and (max-width: $grid-md) {
+    .form{
+      //
+    }
+  }
+}
+
+/*
+* Block: Form
+* Module: Large
+*/
+.form--lg{
+  .form{
+    &__input, &__select{
+      font-size: 1.6rem;
+    }
+  }
+}
+
+/*
+* Block: Form
+* Module: Search
+*/
+.form--search{
+  .form{
+    &__input{
+      font-size: 1.4rem;
+      color: $grey;
+      padding: 0.8em 0.5em;
+      border: 0;
+      border-radius: 0;
+      border-bottom: 2px solid transparent;
+      transition: 0.15s ease-out;
+      @extend .form-control;
+      &:focus{
+        color: $blue;
+        border-color: $blue;
+      }
+      &--dashed{
+
+      }
+      &--icon{
+
+      }
+    }
+    &__select{
+      &--dashed{
+
+      }
+    }
+    &__radio{
+
+    }
+    &__label{
+      display: block;
+      font-size: 2.5rem;
+      color: $grey;
+      &--icon{
+        position: relative;
+        color: $light-grey;
+        .form__input{
+          padding-left: 30px;
+        }
+        .cz-icon{
+          position: absolute;
+          left: 0;
+          top: 50%;
+          transform: translate(0, -50%);
+        }
+      }
+    }
+    &__group{
+
+    }
+    &__fieldset{
+
+    }
+    &__button{
+      &--small{
+
+      }
+      &--medium{
+
+      }
+      &--large{
+
+      }
+    }
+  }
+}
+
+/*
+* Block: Form
+* Module: Search-small
+*/
+.form--search-small{
+  .form{
+    position: relative;
+    &__icon{
+      position: absolute;
+      top: 50%;
+      left: 0;
+      margin-top: 0px;
+      transform: translate(0, -50%);
+      font-size: 2.2rem;
+      color: $light-grey;
+    }
+    &__input{
+      background: transparent;
+      border: 0;
+      border-bottom: 1px solid #dde1e3;
+      padding: 0.75em 0.5em 0.75em 2em;
+      border-radius: 0;
+      font-size: 1.4rem;
+      @extend .hidden-sm-down, .form-control;
+    }
+  }
+}
+
+.form--list{
+  .form{
+    &__group{
+      &--addon{
+        .form__input{
+          padding-left: 3rem;
+        }
+      }
+    }
+
+    &__wrapper{
+      position: relative;
+    }
+
+    &__input{
+      border: 0;
+      background: transparent;
+      font-size: 1.4rem;
+    }
+
+    &__icon{
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translate(0, -50%);
+      font-size: 2.8rem;
+      color: $light-grey;
+    }
+
+    &__checkbox{
+      padding-left: 3rem;
+      white-space: nowrap;
+      @extend .c-input, .c-checkbox;
+    }
+    &__indicator{
+      width: 2rem;
+      height: 2rem;
+      @extend .c-indicator;
+    }
+  }
+}
+
+// @import "states/s-form";

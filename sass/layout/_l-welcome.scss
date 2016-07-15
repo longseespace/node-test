@@ -1,0 +1,67 @@
+// Layout: Welcome
+.l-welcome{
+  text-align: center;
+
+  // Block: Wrapper
+  &__wrapper{
+    position: absolute;
+    top: 40%;
+    left: 0;
+    width: 100%;
+    transform: translate(0, -40%);
+  }
+
+  // Block: Container
+  &__container{
+    // @extend .container;
+  }
+
+  // Block: Brand
+  &__brand{
+    font-size: 6rem;
+    margin-bottom: 30px;
+    // @extend .col-xs-12;
+  }
+
+  // Block: Text
+  &__text{
+    font-size: 5rem;
+    margin: 0.5em 0 1.5em;
+    // @extend .col-xs-12;
+  }
+
+  // Block: Button
+  &__button{
+    // @extend .col-xs-12, .col-md-6, .col-lg-2;
+
+    .button{
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  }
+
+  // Layout: Welcome
+  // Size: Desktop
+  @media screen and (min-width: $grid-lg) {
+    .l-welcome{
+      //
+    }
+  }
+
+  // Layout: Welcome
+  // Size: Tablet
+  @media screen and (min-width: $grid-md)
+  and (max-width: $grid-lg) {
+    .l-welcome{
+      //
+    }
+  }
+
+  // Layout: Welcome
+  // Size: Smartphone
+  @media screen and (max-width: $grid-md) {
+    .l-welcome{
+      //
+    }
+  }
+}

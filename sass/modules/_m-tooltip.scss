@@ -1,0 +1,67 @@
+.tooltip{
+  font-size: 1.5rem;
+  &.in{
+    opacity: 1;
+  }
+  &-inner{
+    background: $blue;
+    padding: 0.25em 1.25em;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+  &-arrow{
+    border-top-color: $blue !important;
+  }
+
+  // Layout: Splash
+  // Size: Smartphone
+  @media screen and (max-width: $grid-lg) {
+    display: none !important;
+  }
+}
+
+.tooltip--popover{
+  width: 100%;
+  left: 0;
+  top: 100%;
+  transition: 0.15s ease-out;
+  visibility: hidden;
+
+  &.is-active{
+    opacity: 1;
+    top: 120%;
+    visibility: visible;
+  }
+
+  .tooltip{
+    &__inner{
+      background: #fff;
+      box-shadow: 0 0 10px #ccc;
+      border-radius: 4px;
+    }
+    &__arrow{
+      border-width: 30px;
+      text-shadow: 0 0 10px #ccc;
+      font-size: 4rem;
+      line-height: 100%;
+      color: $white;
+      position: absolute;
+      @extend .ion-arrow-up-b;
+
+      &:after{
+        content: "";
+        position: absolute;
+        left: -10px;
+        bottom: 0;
+        right: -10px;
+        height: 16px;
+        background: $white;
+      }
+
+      &--top-right{
+        top: -25px;
+        right: 10px;
+      }
+    }
+  }
+}

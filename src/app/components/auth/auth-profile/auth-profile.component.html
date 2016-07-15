@@ -1,0 +1,53 @@
+<header class="l-auth__header">
+  <h1 class="l-auth__title">Fill Your Profile</h1>
+</header>
+
+<form class="form form--default">
+  <div class="l-auth__group l-auth__group--firstName">
+    <label class="form__label">First Name</label>
+    <input type="text" name="firstName" [(ngModel)]="firstName" placeholder="" class="form__input" required/>
+  </div>
+  <div class="l-auth__group l-auth__group--companyName">
+    <label class="form__label">Last Name</label>
+    <input type="text" name="lastName" [(ngModel)]="lastName" placeholder="" class="form__input" required/>
+  </div>
+
+  <div class="l-auth__group l-auth__group--company">
+    <label class="form__label">Company Name</label>
+    <input type="text" name="company" [(ngModel)]="company" placeholder="" class="form__input" required/>
+  </div>
+
+  <div class="l-auth__group l-auth__group--categories">
+    <label class="form__label">Categories</label>
+    <input type="text" name="categories" [(ngModel)]="categorySelected" [typeahead]="categories" (typeaheadOnSelect)="typeaheadOnSelect($event)" class="form__input" required/>
+  </div>
+
+  <!-- Categories placeholder -->
+  <div class="l-auth__categories">
+    <div class="l-auth__category" *ngFor="let category of categoriesSelected">
+      <span class="label">
+        <span class="l-auth__category-close"></span>
+        {{ category }}
+      </span>
+    </div>
+  </div>
+
+  <div class="l-auth__group l-auth__group--address-1">
+    <label class="form__label">Address</label>
+    <input type="text" name="address1" [(ngModel)]="address1" placeholder="Street Address & Number" class="form__input" required/>
+  </div>
+
+  <div class="l-auth__group l-auth__group--address-2">
+    <label class="form__label">Address</label>
+    <input type="text" name="address2" [(ngModel)]="address2" placeholder="City State & Zip" class="form__input" required/>
+  </div>
+
+  <div class="l-auth__group l-auth__group--phone">
+    <label class="form__label">Phone</label>
+    <input type="text" name="phone" [(ngModel)]="phone" placeholder="Phone Number" class="form__input" required/>
+  </div>
+</form>
+
+<footer class="l-auth__footer">
+  <button (click)="continue()" class="l-auth__continue button button--filled button--primary button--lg">Continue</button>
+</footer>

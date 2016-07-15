@@ -1,0 +1,62 @@
+// Layout: Filter
+.l-filter{
+  text-align: center;
+  position: relative;
+  margin-top: 15px;
+
+  .form--search-small, .nav--filter{
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+
+  .form--search-small{
+    left: 0;
+    width: 200px;
+  }
+
+  &__display{
+    margin: auto;
+    .nav{
+      &__link{
+        &--folder{
+          @extend .ion-android-folder-open;
+        }
+        &--listing{
+          @extend .ion-android-apps;
+        }
+        &--hosting{
+          @extend .cz-icon-profile;
+        }
+        &--upcoming{
+          @extend .cz-icon-next;
+        }
+        &--past{
+          @extend .cz-icon-previous;
+        }
+      }
+    }
+  }
+
+  .nav--filter{
+    position: absolute;
+    right: 0;
+    z-index: 40;
+  }
+
+  // Layout: Filter
+  // Size: Desktop
+  @media screen and (min-width: $grid-md) {
+    .l-filter{
+      margin-bottom: -10px;
+    }
+  }
+
+  // Layout: Filter
+  // Size: Smartphone
+  @media screen and (max-width: $grid-md) {
+    .l-filter{
+
+    }
+  }
+}

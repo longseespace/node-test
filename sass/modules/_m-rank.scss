@@ -1,0 +1,36 @@
+// Module: Rank
+// Modifier: Inline
+.rank--inline{
+    display: inline-block;
+    .rank{
+        &__star{
+            color: $blue;
+            font-size: 2.5rem;
+            padding: 0 0.05em;
+            vertical-align: middle;
+            @extend .ion-android-star-outline;
+        }
+        &__title{
+            font-size: 1.4rem;
+            text-transform: lowercase;
+            margin-left: 5px;
+            display: inline-block;
+        }
+    }
+}
+
+// Module: Rank
+// Modifier: Small
+.rank--small{
+    .rank{
+        &__star{
+            font-size: 2rem;
+            padding: 0;
+        }
+        &__title{
+            font-size: 1.2rem;
+        }
+    }
+}
+
+@import "states/s-rank";

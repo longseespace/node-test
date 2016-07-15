@@ -1,0 +1,44 @@
+.list{
+    &__item{
+        color: $grey;
+        &--icon{
+            padding-left: 25px;
+            position: relative;
+        }
+    }
+    &__icon{
+        font-size: 1.9rem;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translate(0, -50%);
+    }
+    &__text{
+        color: #333;
+    }
+}
+
+.list--small{
+    .list{
+        &__item{
+        }
+        &__icon{
+            font-size: 2rem;
+        }
+        &__text{
+            font-size: 1.3rem;
+        }
+    }
+}
+
+.list--inline{
+    line-height: 100%;
+    .list{
+        &__item{
+            margin-right: 13px;
+            display: inline-block;
+            padding-top: 2px;
+            padding-bottom: 2px;
+        }
+    }
+}

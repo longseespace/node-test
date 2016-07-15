@@ -1,0 +1,33 @@
+html{
+  font-size: 62.5%;
+}
+
+body{
+  font-size: 1.4rem;
+  background: $background;
+  font-family: OpenSans;
+  font-weight: 500;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button{
+  outline: none !important;
+}
+
+a{
+  outline: none !important;
+
+  &:hover, &:focus{
+    text-decoration: none;
+  }
+}
+
+ul, ol{
+  padding: 0;
+  margin: 0;
+
+  li {
+    list-style: none;
+  }
+}

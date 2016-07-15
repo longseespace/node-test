@@ -1,0 +1,573 @@
+// Layout: Profile
+// Modifier: Header
+.l-profile--header{
+  .l-profile{
+    position: relative;
+    margin-bottom: 2rem;
+
+    // Block: Background
+    &__background{
+      height: 300px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      padding-left: 22px;
+      padding-bottom: 22px;
+      &:after{
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -6px;
+        height: 6px;
+        background: linear-gradient(to bottom, rgba($light-grey, 0.3) 0%, rgba($light-grey, 0.1) 40%, rgba($light-grey, 0) 100%);
+      }
+    }
+
+    // Block: Content
+    &__content{
+      position: relative;
+      padding: 20px 20px 55px 20px;
+      flex: 1;
+      z-index: 5;
+    }
+
+    // Block: Left
+    &__left{
+
+    }
+
+    // Block: Right
+    &__right{
+      text-align: right;
+    }
+
+    // Block: Username
+    &__username{
+      margin-bottom: 0.4em;
+      font-weight: 600;
+      font-size: 2rem;
+    }
+
+    // Block: Career
+    &__career{
+      margin-bottom: 1.25em;
+      font-size: 1.4rem;
+    }
+
+    // Block: Avatar
+    &__avatar{
+      z-index: 60;
+      width: 170px;
+      .avatar{
+        &__image{
+          height: 170px;
+        }
+      }
+    }
+
+    // Block: Nav
+    &__nav{
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      background: $white;
+    }
+  }
+
+  // Layout: Profile Header
+  // Size: Desktop & Tablet
+  @media screen and (min-width: $grid-md) {
+    color: $white;
+
+    .l-profile{
+      // Block: Background
+      &__background{
+        &:before{
+          content: "";
+          background: linear-gradient(to bottom, rgba(#142b40, 0) 20%, #142b40 80%);
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+        }
+      }
+
+      // Block: Right
+      &__right{
+        position: absolute;
+        top: 15px;
+        right: 20px;
+      }
+
+      // Block: Username
+      &__username{
+        padding-top: 5px;
+        float: left;
+      }
+
+      // Block: List
+      &__list{
+        .list{
+          &__item, &__text{
+            color: $white;
+          }
+        }
+      }
+
+      // Block: Rank
+      &__rank{
+        .rank{
+          &__star{
+            color: $white;
+          }
+        }
+      }
+
+      // Block: Options
+      &__options{
+        display: inline-block;
+        margin: 2px 0 9px 15px;
+        line-height: 100%;
+        position: relative;
+        padding-left: 10px;
+        z-index: 10;
+        &:before{
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 5px;
+          bottom: 0px;
+          width: 1px;
+          background: $white;
+        }
+        .nav{
+          &__link{
+            font-size: 2.4rem;
+            padding: 0 0.25em;
+            color: $white;
+            float: left;
+            width: 23px;
+            height: 23px;
+            &.ion-edit{
+              font-size: 1.7rem;
+              padding-top: 5px;
+            }
+          }
+        }
+      }
+
+      // Block: Numbers
+      &__numbers{
+        .nav{
+          &__link{
+            color: $white;
+            &:before{
+              background-color: $white !important;
+            }
+          }
+        }
+      }
+
+      // Block: Followers
+      &__followers{
+        position: absolute;
+        bottom: 11px;
+        right: 12px;
+        z-index: 60;
+        .nav{
+          &__link{
+            padding-top: 0.5em;
+            padding-bottom: 0.5em;
+          }
+        }
+      }
+
+      // Block: Nav
+      &__nav{
+        .nav{
+          &__wrapper{
+            padding-left: 212px;
+          }
+        }
+      }
+    }
+  }
+
+  // Layout: Profile Header
+  // Size: Desktop Large
+  @media screen and (min-width: $grid-xl) {
+    .l-profile{
+      // Block: Content
+      &__content{
+        padding-left: 30px;
+      }
+
+      // Block: Right
+      &__right{
+        right: 20px;
+      }
+
+      // Block: Followers
+      &__followers{
+        right: 12px;
+      }
+
+      // Block: Nav
+      &__nav{
+        .nav{
+          &__wrapper{
+            padding-left: 222px;
+          }
+        }
+      }
+    }
+  }
+
+  // Layout: Profile Header
+  // Size: Desktop
+  @media screen and (min-width: $grid-lg) {
+    .l-profile{
+      // Block: Rank
+      &__rank{
+        display: inline-block;
+      }
+
+      // Block: Numbers
+      &__numbers{
+        padding: 0.65em 0;
+        float: right;
+        .nav{
+          &__link{
+            // transition: 0.15s ease-out;
+            &:hover{
+              // color: $blue;
+            }
+          }
+        }
+      }
+
+      &__right{
+        // transition: 0.2s ease-out;
+        // cursor: pointer;
+        &:hover{
+          // transform: scale(1.03) translate(-10px, 0);
+        }
+      }
+
+      // Block: Nav
+      &__nav{
+        .nav{
+          &__wrapper{
+            margin-right: 280px;
+          }
+        }
+      }
+
+      &__rank{
+
+      }
+
+      // Block: Options
+      &__options{
+        .nav{
+          &__link{
+            position: relative;
+            transition: 0.15s ease-out;
+            &:hover{
+              transform: scale(1.2);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // Layout: Profile Header
+  // Size: Desktop Small
+  @media screen and (min-width: $grid-lg)
+  and (max-width: $grid-xl){
+
+  }
+
+  // Layout: Profile Header
+  // Size: Tablet
+  @media screen and (min-width: $grid-md)
+  and (max-width: $grid-lg) {
+    .container{
+      padding: 0;
+    }
+
+    .l-profile{
+
+      // Block: Nav
+      &__nav{
+        .nav{
+          &__wrapper{
+            margin-right: 150px;
+          }
+        }
+      }
+    }
+  }
+
+  // Smartphone
+  @media screen and (max-width: $grid-md) {
+    color: $grey;
+    padding-top: 2rem;
+    text-align: center;
+
+    .l-profile{
+
+      // Block: Background
+      &__background{
+        background-image: none !important;
+        height: auto;
+        display: block;
+        padding: 0;
+        &:before{
+          content: none;
+        }
+        &:after{
+          left: -0.9375rem;
+          right: -0.9375rem;
+        }
+      }
+
+      // Block: Left
+      // Block: Right
+      &__left, &__right{
+        flex: 0 100%;
+      }
+
+      // Block: Right
+      &__right{
+        text-align: center;
+      }
+
+      // Block: Content
+      &__content{
+        padding: 20px;
+        position: static;
+      }
+
+      // Block: Avatar
+      &__avatar{
+        margin: auto;
+        width: 130px;
+        .avatar{
+          &__image{
+            height: 130px;
+          }
+        }
+      }
+
+      // Block: Rank
+      &__rank{
+        padding: 0.5em 0 0;
+      }
+
+      &__numbers{
+        .nav{
+          &__link{
+            color: $grey;
+          }
+        }
+      }
+
+      // Block: Options
+      &__options{
+        position: absolute;
+        top: 0;
+        right: -10px;
+        .nav{
+          &__link{
+            display: block;
+            color: $light-grey;
+            font-size: 2.4rem;
+            &.ion-edit{
+              font-size: 1.7rem;
+            }
+          }
+        }
+      }
+
+      // Block: Followers
+      &__followers{
+        padding-bottom: 1.5em;
+      }
+
+      // Block: Nav
+      &__nav{
+        margin-left: -0.9375rem;
+        margin-right: -0.9375rem;
+        position: relative;
+        overflow: hidden;
+        box-shadow: none;
+        background: transparent;
+        &:before, &:after{
+          bottom: 0;
+        }
+        .nav{
+          &__wrapper{
+            background: $white;
+            padding-left: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Layout: Profile
+// Modifier: Events / Shop
+.l-profile--events,
+.l-profile--shop{
+  .l-profile{
+    // Block: Listing
+    &__listing{
+      display: flex;
+      flex-flow: row wrap;
+      @extend .row;
+
+      .card{
+        padding-left: 20px;
+        padding-right: 20px;
+        margin: 1.6em 0;
+        @extend .col-xs-12, .col-md-4;
+        &__date{
+          left: 20px;
+        }
+      }
+    }
+  }
+
+  // Layout: Profile
+  // Modifier: Events / Shop
+  // Size: Desktop
+  @media screen and (min-width: $grid-md)
+  and (max-width: $grid-lg) {
+    .l-profile{
+      // Block: Listing
+      &__listing{
+        // margin: 0;
+      }
+    }
+  }
+
+  // Layout: Profile
+  // Modifier: Events / Shop
+  // Size: Smartphone
+  @media screen and (max-width: $grid-md) {
+    .l-profile{
+      // Block: Listing
+      &__listing{
+        margin-top: 15px;
+        .card{
+          padding: 0;
+          margin-top: 0;
+          margin-bottom: 30px;
+          &__date{
+            left: 0;
+          }
+        }
+      }
+    }
+
+    .card--create{
+      margin-bottom: 0;
+      margin-top: 15px;
+    }
+  }
+}
+
+// Layout: Profile
+// Modifier: About
+.l-profile--about{
+    margin-top: 30px;
+    @extend .container;
+
+    .l-profile{
+        // Block: Wrapper
+        &__wrapper{
+            column-count: 2;
+            column-gap: 30px;
+        }
+
+        // Block: Info
+        &__info, &__seller, &__hour{
+            display: inline-block;
+            margin: 0 0 30px;
+            width: 100%;
+        }
+
+        // Block: Username
+        &__username{
+            font-size: 1.6rem;
+            font-weight: 700;
+        }
+
+        // Block: Rank
+        &__rank{
+            float: right;
+            .nav{
+                display: inline-block;
+                vertical-align: middle;
+            }
+        }
+
+        // Block: Career
+        &__career{
+            float: left;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        // Block: Nav
+        &__map{
+            width: 100%;
+            height: 220px;
+            float: left;
+            margin-top: 30px;
+        }
+
+        &__service, &__about{
+            .form__label-icon{
+                @extend .ion-ios-information-outline;
+            }
+        }
+    }
+
+    // Layout: Profile
+    // Modifier: About
+    // Size: Desktop
+    @media screen and (min-width: $grid-lg) {
+        .l-profile{
+            //
+        }
+    }
+
+    // Layout: Profile
+    // Modifier: About
+    // Size: Tablet
+    @media screen and (min-width: $grid-md)
+    and (max-width: $grid-lg) {
+        .l-profile{
+            //
+        }
+    }
+
+    // Layout: Profile
+    // Modifier: About
+    // Size: Smartphone
+    @media screen and (max-width: $grid-md) {
+        .l-profile{
+            //
+        }
+    }
+}
