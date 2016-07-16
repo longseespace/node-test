@@ -5,7 +5,7 @@
 - `npm start`
 
 ## Accessing
-Open your browser and access: [http://localhost:4200/]http://localhost:4200/
+Open your browser and access: http://localhost:4200/
 
 ## User Creation and Login Process Test
 Summary:  A user is able to come to a login/signup page that allows them to log-in or if they are not an existing user, sign up as a new user. In either case, the user will have a basic profile information page after signing up or logging in which will also be editable. Also, if the user has forgotten password, they will be able to obtain their password via email. Please follow the instructions below:
