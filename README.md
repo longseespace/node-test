@@ -32,9 +32,9 @@ Also, you must allow the user to sign-out from profile page in which case they w
 
 ### Technologies to be used to implement this test (ONLY):
 
-Front-End: HTIML, Bootstrap, Angular 2   ---this part is already developed for you but you can make modification in order to connect with API and have it working. No filed validation is necessary.
+- Front-End: HTIML, Bootstrap, Angular 2   ---this part is already developed for you but you can make modification in order to connect with API and have it working. No field validation is necessary.
 
-- Back-End: Node.js API
+- Back-End (API): Node.js 
 - Database: MongoDB
 
 
