@@ -1,0 +1,16 @@
+sudo: false
+language: node_js
+node_js:
+  - '6'
+env:
+  global:
+    - GH_REF: github.com/longseespace/node-test
+cache:
+  directories:
+    - node_modules
+install:
+  - npm install
+script:
+  - npm start
+after_success:
+  - chmod +x ./deploy.sh && ./deploy.sh
