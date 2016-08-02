@@ -18,16 +18,16 @@ import { ProfileService } from '../';
 
 export class ProfileEditComponent {
   public user : any = {
-    email : 'john.doe@gmail.com',
+    email : '',
     password : '',
     profile : {
-      firstName : 'John',
-      lastName : 'Doe',
-      company : 'Google',
-      categories : ['Category 1', 'Category 2', 'Category 3'],
-      address1 : 'California',
-      address2 : 'Elm Street',
-      phone : '+1 5599999999'
+      firstName : '',
+      lastName : '',
+      company : '',
+      categories : [],
+      address1 : '',
+      address2 : '',
+      phone : ''
     }
   };
   public categories : Array<string> = ['Alabama', 'Alaska', 'Arizona', 'Arkansas',

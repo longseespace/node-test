@@ -4,7 +4,7 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
 import { TYPEAHEAD_DIRECTIVES } from 'ng2-bootstrap/ng2-bootstrap';
 
 import { CzInputText, CzAutocomplete } from '../../../shared';
-import { ProfileService } from '../../';
+import { ProfileService } from '../../profile';
 import { AuthService } from '../';
 
 @Component({

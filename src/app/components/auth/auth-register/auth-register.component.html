@@ -12,6 +12,7 @@
   <div class="l-auth__divisor">Or</div>
 
   <form class="form form--default" (submit)="authenticate()">
+    <div class="l-auth__message form__group">{{message}}</div>
     <div class="l-auth__email form__group">
       <label class="form__label">E-mail</label>
       <input type="text" name="email" [(ngModel)]="email" placeholder="" class="form__input" required/>

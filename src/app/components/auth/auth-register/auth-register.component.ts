@@ -17,6 +17,7 @@ import { AuthService } from '../';
 export class AuthRegisterComponent{
   public email : string;
   public password : string;
+  private message : string;
 
   constructor(
     private router : Router,
@@ -41,8 +42,11 @@ export class AuthRegisterComponent{
   authenticate(provider) {
     this.authService.register(provider, this.email, this.password)
     .then(succeed => {
-      if (succeed)
+      if (succeed) {
         this.router.navigate([ 'welcome/auth/profile' ]);
+      } else {
+        this.message = 'Email exists';
+      }
     })
   }
 }
