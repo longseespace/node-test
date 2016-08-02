@@ -4,7 +4,7 @@ import { Http, Headers, RequestOptions } from '@angular/http';
 @Injectable()
 export class ProfileService {
 
-  private profileUrl = 'http://localhost:3000/users/profile';
+  private profileUrl = 'https://polar-sierra-94874.herokuapp.com/users/profile';
 
   constructor (private http: Http) {}
 

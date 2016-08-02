@@ -4,9 +4,9 @@ import { Http, Response, Headers, RequestOptions } from '@angular/http';
 @Injectable()
 export class AuthService {
 
-  private registerUrl = 'http://localhost:3000/users/register';
-  private loginUrl = 'http://localhost:3000/users/login';
-  private resetPasswordUrl = 'http://localhost:3000/users/resetpassword';
+  private registerUrl = 'https://polar-sierra-94874.herokuapp.com/users/register';
+  private loginUrl = 'https://polar-sierra-94874.herokuapp.com/users/login';
+  private resetPasswordUrl = 'https://polar-sierra-94874.herokuapp.com/users/resetpassword';
 
   private extractData(res: Response) {
     let body = res.json();
