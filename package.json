@@ -5,6 +5,7 @@
   "angular-cli": {},
   "scripts": {
     "start": "concurrently \"ng serve\" \"gulp watch\" ",
+    "build": "ng build",
     "typings": "typings install --global",
     "postinstall": "npm run typings",
     "lint": "tslint \"src/**/*.ts\"",
