@@ -1,0 +1,30 @@
+<header class="l-auth__header">
+  <button ui-sref="welcome" class="l-auth__close"></button>
+  <h1 class="l-auth__title">Create Your Free Account</h1>
+</header>
+
+<div class="l-auth__body">
+  <a href="https://polar-sierra-94874.herokuapp.com/auth/linkedin" class="l-auth__provider l-auth__provider--linkedin button button--filled">
+    <span class="l-auth__provider-icon"></span>
+    Sign Up with Linked In
+  </a>
+
+  <div class="l-auth__divisor">Or</div>
+
+  <form class="form form--default" (submit)="authenticate()">
+    <div class="l-auth__message form__group">{{message}}</div>
+    <div class="l-auth__email form__group">
+      <label class="form__label">E-mail</label>
+      <input type="text" name="email" [(ngModel)]="email" placeholder="" class="form__input" required/>
+    </div>
+    <div class="l-auth__password form__group">
+      <label class="form__label">Password</label>
+      <input type="password" name="password" [(ngModel)]="password" placeholder="" class="form__input" required/>
+    </div>
+  </form>
+</div>
+
+<footer class="l-auth__footer">
+  <button (click)="authenticate()" class="l-auth__continue button button--filled button--primary button--lg">Sign Up</button>
+  <p class="l-auth__existing">Already have an account? <a [routerLink]="['../login']">Log In!</a></p>
+</footer>

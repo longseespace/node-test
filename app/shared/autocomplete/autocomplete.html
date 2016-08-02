@@ -1,0 +1,10 @@
+<div class="autocomplete">
+  <md-input
+    placeholder="{{ placeholder }}"
+    name="{{ name }}"
+    class="form__input"
+    [typeahead]="states"
+    (typeaheadOnSelect)="typeaheadOnSelect($event)"
+    required>
+  </md-input>
+</div>

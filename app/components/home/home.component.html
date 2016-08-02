@@ -1,0 +1,15 @@
+<div class="l-home container">
+  <div class="l-home__user">
+    <h1>Hello {{ user.profile.firstName }} {{ user.profile.lastName }}</h1>
+    <p>Company: <strong>{{ user.profile.company }}</strong></p>
+    <p>Categories: <strong *ngFor="let category of user.profile.categories">{{ category }} </strong></p>
+    <p>Address 1: <strong>{{ user.profile.address1 }}</strong></p>
+    <p>Address 2: <strong>{{ user.profile.address2 }}</strong></p>
+    <p>Phone: <strong>{{ user.profile.phone }}</strong></p>
+
+    <footer>
+      <button (click)="logout()" class="button button--primary button--filled">Logout</button>
+      <button (click)="edit()" class="button button--primary button--filled">Edit</button>
+    </footer>
+  </div>
+</div>

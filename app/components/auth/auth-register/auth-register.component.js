@@ -1,0 +1,62 @@
+"use strict";
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var core_1 = require('@angular/core');
+var router_1 = require('@angular/router');
+var shared_1 = require('../../../shared');
+var _1 = require('../');
+var AuthRegisterComponent = (function () {
+    function AuthRegisterComponent(router, authService) {
+        this.router = router;
+        this.authService = authService;
+    }
+    AuthRegisterComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        var token = window.location.search.replace('?token=', '');
+        if (token.length > 0) {
+            this.authService.login('linkedin', token, null)
+                .then(function (succeed) {
+                if (succeed)
+                    _this.router.navigate(['welcome/auth/profile'], { queryParams: {} });
+            });
+        }
+    };
+    /**
+     * Handles the user authentication then redirects to next page if succeed
+     * @param {string} provider - Optional provider parameter
+     */
+    AuthRegisterComponent.prototype.authenticate = function (provider) {
+        var _this = this;
+        this.authService.register(provider, this.email, this.password)
+            .then(function (succeed) {
+            if (succeed) {
+                _this.router.navigate(['welcome/auth/profile']);
+            }
+            else {
+                _this.message = 'Email exists';
+            }
+        });
+    };
+    AuthRegisterComponent = __decorate([
+        core_1.Component({
+            moduleId: module.id,
+            selector: '.l-auth--register',
+            templateUrl: './auth-register.component.html',
+            directives: [
+                router_1.ROUTER_DIRECTIVES,
+                shared_1.CzInputText
+            ]
+        }), 
+        __metadata('design:paramtypes', [router_1.Router, _1.AuthService])
+    ], AuthRegisterComponent);
+    return AuthRegisterComponent;
+}());
+exports.AuthRegisterComponent = AuthRegisterComponent;
+//# sourceMappingURL=auth-register.component.js.map
