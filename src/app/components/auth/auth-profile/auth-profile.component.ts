@@ -5,6 +5,7 @@ import { TYPEAHEAD_DIRECTIVES } from 'ng2-bootstrap/ng2-bootstrap';
 
 import { CzInputText, CzAutocomplete } from '../../../shared';
 import { ProfileService } from '../../';
+import { AuthService } from '../';
 
 @Component({
   moduleId : module.id,
@@ -17,7 +18,8 @@ import { ProfileService } from '../../';
     CzAutocomplete
   ],
   providers : [
-    ProfileService
+    ProfileService,
+    AuthService
   ]
 })
 
@@ -72,7 +74,9 @@ export class AuthProfileComponent {
 
   constructor(
     private router: Router,
-    private profileService: ProfileService)
+    private profileService: ProfileService,
+    private authService: AuthService
+  )
   { }
 
   typeaheadOnSelect(e : any) {
@@ -84,16 +88,18 @@ export class AuthProfileComponent {
   }
 
   continue() {
-    var profile = {
+    const profile = {
       firstName : this.firstName,
       lastName : this.lastName,
+      company : this.company,
       categories : this.categoriesSelected,
       address1 : this.address1,
-      address2 : this.address2
+      address2 : this.address2,
+      phone : this.phone
     }
 
     // The second parameter is the User object
-    this.profileService.create(profile, {})
+    this.profileService.create(this.authService.getToken(), profile)
     .then(succeed => {
       if (succeed)
         this.router.navigate([ 'home' ]);

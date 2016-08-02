@@ -2,7 +2,7 @@ import { Component, OnChanges } from '@angular/core';
 import { Router, ROUTER_DIRECTIVES } from '@angular/router';
 import { TYPEAHEAD_DIRECTIVES } from 'ng2-bootstrap/ng2-bootstrap';
 
-import { UserService } from '../';
+import { UserService, AuthService, ProfileService } from '../';
 
 @Component({
   moduleId : module.id,
@@ -29,8 +29,22 @@ export class HomeComponent {
     }
   };
 
-  constructor(private router: Router) {
+  constructor(
+    private router: Router,
+    private authService: AuthService,
+    private profileService: ProfileService)
+  { }
 
+  ngOnInit() {
+    if (!this.authService.isAuthenticated()) {
+      this.router.navigate([ 'welcome' ]);
+    } else {
+      this.profileService.get(this.authService.getToken())
+        .then(user => {
+          console.log(user);
+          this.user = user;
+        });
+    }
   }
 
   edit() {
@@ -38,6 +52,7 @@ export class HomeComponent {
   }
 
   logout() {
+    this.authService.logout();
     this.router.navigate([ 'welcome' ]);
   }
 }

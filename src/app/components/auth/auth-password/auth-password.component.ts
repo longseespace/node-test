@@ -15,6 +15,7 @@ import { AuthService } from '../';
 
 export class AuthPasswordComponent {
   private email : string;
+  private message: string;
 
   constructor(
     private router: Router,
@@ -24,8 +25,12 @@ export class AuthPasswordComponent {
   continue() {
     this.authService.forgotPassword(this.email)
     .then(succeed => {
-      if (succeed)
-        alert('Email must be sent to user email');
+      if (succeed) {
+        alert('Email sent. Please check your inbox.');
+        this.router.navigate([ 'welcome/auth/login' ]);
+      } else {
+        this.message = 'Email not found';
+      }
     })
   }
 }

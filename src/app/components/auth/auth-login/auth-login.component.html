@@ -3,14 +3,15 @@
     <h1 class="l-auth__title">Log In</h1>
   </header>
 
-  <button class="l-auth__provider l-auth__provider--linkedin button button--filled" (click)="authenticate('linkedin')">
+  <a href="http://localhost:3000/auth/linkedin" class="l-auth__provider l-auth__provider--linkedin button button--filled">
     <span class="l-auth__provider-icon"></span>
     Log In with Linked In
-  </button>
+  </a>
 
   <div class="l-auth__divisor">Or</div>
 
   <form class="form form--default" (submit)="authenticate()">
+    <div class="l-auth__error form__group">{{error}}</div>
     <div class="l-auth__email form__group">
       <label class="form__label">E-mail</label>
       <input type="text" name="email" [(ngModel)]="email" placeholder="" class="form__input" required/>

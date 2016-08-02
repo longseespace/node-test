@@ -3,6 +3,8 @@ import { Router, ROUTER_DIRECTIVES } from '@angular/router';
 import { TYPEAHEAD_DIRECTIVES } from 'ng2-bootstrap/ng2-bootstrap';
 
 import { UserService } from '../../';
+import { AuthService } from '../../auth';
+import { ProfileService } from '../';
 
 @Component({
   moduleId : module.id,
@@ -71,8 +73,19 @@ export class ProfileEditComponent {
 
   constructor(
     private router: Router,
-    private userService : UserService)
+    private userService : UserService,
+    private profileService: ProfileService,
+    private authService: AuthService)
   { }
+
+  ngOnInit() {
+    if (!this.authService.isAuthenticated()) {
+      this.router.navigate([ 'welcome' ]);
+    } else {
+      this.profileService.get(this.authService.getToken())
+        .then(user => this.user = user);
+    }
+  }
 
   typeaheadOnSelect(e : any) {
     if (this.user.profile.categories.length >= 3)
@@ -83,7 +96,7 @@ export class ProfileEditComponent {
   }
 
   save() {
-    this.userService.edit(this.user)
+    this.profileService.edit(this.authService.getToken(), this.user.profile)
     .then(succeed => {
       if (succeed)
         this.router.navigate([ 'home' ]);

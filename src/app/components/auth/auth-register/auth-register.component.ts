@@ -23,6 +23,17 @@ export class AuthRegisterComponent{
     private authService : AuthService)
   { }
 
+  ngOnInit() {
+    const token = window.location.search.replace('?token=', '');
+    if (token.length > 0) {
+      this.authService.login('linkedin', token, null)
+      .then(succeed => {
+        if (succeed)
+          this.router.navigate([ 'welcome/auth/profile' ], { queryParams: {}});
+      })
+    }
+  }
+
   /**
    * Handles the user authentication then redirects to next page if succeed
    * @param {string} provider - Optional provider parameter
